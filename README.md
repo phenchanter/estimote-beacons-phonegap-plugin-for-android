@@ -4,7 +4,7 @@
 
 ## Overview
 
-This PhoneGap 3.x Plugin for Android allows interaction with [Estimote iBeacons](http://estimote.com). It is just a wrapper around [Estimote Android SDK](https://github.com/Estimote/Android-SDK). Names for [Available Methods] come from it.
+This PhoneGap 3.x Plugin for Android allows interaction with [Estimote iBeacons](http://estimote.com). This PhoneGap Plugin is just a wrapper around [Estimote Android SDK](https://github.com/Estimote/Android-SDK). Names for [Available Methods](#available-methods) come from it.
 
 This PhoneGap Plugin allows for:
 - beacon ranging (scan beacons and optionally filters them by their values).
