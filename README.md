@@ -13,7 +13,9 @@ This PhoneGap Plugin allows for:
 
 ### Requirements
 
-- PhoneGap 3.x.
+- [PhoneGap 3.x](http://phonegap.com/install/).
+- [Eclipse](https://www.eclipse.org/downloads/) or [Android Studio](http://developer.android.com/sdk/installing/studio.html) IDE.
+- [Android SDK](http://developer.android.com/sdk).
 - Mobile device with Android 4.3 or above and Bluetooth 4.0 or above ([Bluetooth Low Energy](http://en.wikipedia.org/wiki/Bluetooth_low_energy) or BLE).
 
 ## Usage
