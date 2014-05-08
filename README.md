@@ -112,7 +112,11 @@ Not all methods are listed below, see [EstimoteBeacons.js](https://github.com/md
   
   Read [Apache Cordova - The Command Line Interface](http://cordova.apache.org/docs/en/3.4.0/guide_cli_index.md.html#The%20Command-Line%20Interface) for more information.
 
-2. For which Android mobile devices could I develop an hybrid app using this PhoneGap Plugin?
+2. Where can I find a sample app which uses this PhoneGap Plugin?
+
+You can find it in this [repository](https://github.com/hugohabel/MyEstimoteDemoApp).
+
+3. For which Android mobile devices could I develop an hybrid app using this PhoneGap Plugin?
 
   These could be some of them:
   - [Samsung Galaxy S3](http://www.samsung.com/global/galaxys3/)
@@ -125,7 +129,7 @@ Not all methods are listed below, see [EstimoteBeacons.js](https://github.com/md
   - [Google Nexus 5](http://www.google.com/nexus/5/)
   - [Google Nexus 7](http://www.google.com/nexus/7/)
 
-3. Is there an app to check if my Android mobile device supports BLE?
+4. Is there an app to check if my Android mobile device supports BLE?
 
   - [Check if your Android device supports Bluetooth Low Energy (BLE)](http://weimenglee.blogspot.com/2013/10/check-if-your-android-device-supports.html) (NOT TESTED)
   - [BLE Checker](https://play.google.com/store/apps/details?id=com.magicalboy.btd) (NOT TESTED)
