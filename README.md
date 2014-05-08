@@ -89,7 +89,7 @@ var app = {
 
 ## Available Methods
 
-Not all methods are listed below, see [EstimoteBeacons.js](https://github.com/mdc-ux-team/estimote-beacons-phonegap-plugin-for-android//blob/master/www/EstimoteBeacons.js) for a full list.
+Not all available methods are listed below, see [EstimoteBeacons.js](https://github.com/mdc-ux-team/estimote-beacons-phonegap-plugin-for-android//blob/master/www/EstimoteBeacons.js) for a full list.
 
 ### startRangingBeaconsInRegion
 
