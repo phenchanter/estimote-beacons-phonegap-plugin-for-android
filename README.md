@@ -48,7 +48,10 @@ Not all methods are listed below, see EstimoteBeacons.js for a full list.
 - [Google Nexus 7] (http://www.google.com/nexus/7/)
 - etc.
 
-[Check if your Android device supports Bluetooth Low Energy (BLE)](http://weimenglee.blogspot.com/2013/10/check-if-your-android-device-supports.html) (NOT TESTED)
+2. Is there an app to check if my Android mobile device supports BLE?
+
+- [Check if your Android device supports Bluetooth Low Energy (BLE)](http://weimenglee.blogspot.com/2013/10/check-if-your-android-device-supports.html) (NOT TESTED)
+- [BLE Checker](https://play.google.com/store/apps/details?id=com.magicalboy.btd) (NOT TESTED)
 
 ## License
 
