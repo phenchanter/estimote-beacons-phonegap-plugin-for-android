@@ -1,6 +1,6 @@
 # Estimote iBeacons PhoneGap Plugin for Android
 
-** *NOTE: THIS IS A WORK IN PROGRESS. IT'S NOT EVEN A BETA VERSION YET. EVERYTHING MAY CHANGE* .**
+**_NOTE: THIS IS A WORK IN PROGRESS. IT'S NOT EVEN A BETA VERSION YET. EVERYTHING MAY CHANGE_.**
 
 ## Overview
 
@@ -117,7 +117,7 @@ Not all available methods are listed below, see [EstimoteBeacons.js](https://git
   $ cordova platform add android
   ```
   
-  Read [Apache Cordova - The Command Line Interface](http://cordova.apache.org/docs/en/3.4.0/guide_cli_index.md.html#The%20Command-Line%20Interface) for more information.
+  Read [The Command Line Interface](http://cordova.apache.org/docs/en/3.4.0/guide_cli_index.md.html#The%20Command-Line%20Interface) within Apache Cordova Documentation for more information.
 
 2. Where can I find a sample app which uses this plugin?
 
