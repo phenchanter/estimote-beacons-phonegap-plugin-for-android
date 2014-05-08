@@ -110,10 +110,10 @@ Not all methods are listed below, see EstimoteBeacons.js for a full list.
   - [Check if your Android device supports Bluetooth Low Energy (BLE)](http://weimenglee.blogspot.com/2013/10/check-if-your-android-device-supports.html) (NOT TESTED)
   - [BLE Checker](https://play.google.com/store/apps/details?id=com.magicalboy.btd) (NOT TESTED)
   
-3. How to create an Cordova Project/App for Android?
+3. How to create a Cordova Project/App for Android?
 
   ```
-  $ cordova create mycordovaapp com.mycompany.mycordovapp MyCordovaApp
+  $ cordova create mycordovaapp com.mycompany.mycordovaapp MyCordovaApp
   ```
 
   ```
