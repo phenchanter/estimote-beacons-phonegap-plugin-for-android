@@ -121,7 +121,7 @@ Not all available methods are listed below, see [EstimoteBeacons.js](https://git
 
 2. Where can I find a sample app which uses this plugin?
 
-  Take a look at this [repository](https://github.com/mdc-ux-team/estimote-beacons-phonegap-sample-app).
+  Take a look at [estimote-beacons-phonegap-sample-app](https://github.com/mdc-ux-team/estimote-beacons-phonegap-sample-app).
 
 3. For which Android mobile devices could I develop an hybrid app using this plugin?
 
