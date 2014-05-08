@@ -30,9 +30,10 @@ var myInterval;
 function onDeviceReady() {
   window.EstimoteBeacons.startRangingBeaconsInRegion(function() {
     // Every now and then get the list of beacons in range
-    myIinterval = setInterval(function() {
+    myInterval = setInterval(function() {
         window.EstimoteBeacons.getBeacons(function(data) {
             // data argument contains the following information: proximityUUID, major, minor, rssi, macAddress, measuredPower
+            ...
         });
     }, 3000);
   });  
