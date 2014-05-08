@@ -87,7 +87,7 @@ Not all methods are listed below, see [EstimoteBeacons.js](https://github.com/md
 
 ## Known Issues
 
-- Sometimes this PhoneGap Plugin stops working because of an error: "Bluetooth Share has stopped". This is an [Android bug](https://github.com/Estimote/Android-SDK#faq). When this error appears, it may be necessary to factory reset your phone.
+- Sometimes this PhoneGap Plugin stops working because of an error: "Bluetooth Share has stopped". This is an [Android bug](https://code.google.com/p/android/issues/detail?id=67272) For more information see the bullet #2 in the [FAQ](https://github.com/Estimote/Android-SDK#faq) section of Estimote Android SDK repo. When this error appears, it may be necessary to factory reset your phone.
 
 ## FAQ
 
