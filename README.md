@@ -22,17 +22,22 @@ This PhoneGap Plugin allows for:
 
 ### How to get the iBeacons in Region?
 
-On your `assets/www/js/index.js` file, on the `onDeviceReady` method:
+On your `assets/www/js/index.js` file:
 
 ```
-window.EstimoteBeacons.startRangingBeaconsInRegion(function() {
+var myInterval;
+...
+function onDeviceReady() {
+  window.EstimoteBeacons.startRangingBeaconsInRegion(function() {
     // Every now and then get the list of beacons in range
     myIinterval = setInterval(function() {
         window.EstimoteBeacons.getBeacons(function(data) {
             // data argument contains the following information: proximityUUID, major, minor, rssi, macAddress, measuredPower
         });
     }, 3000);
-});
+  });  
+}
+document.addEventListener('deviceready', onDeviceReady, false);
 ```
 
 ### How to bind events?
