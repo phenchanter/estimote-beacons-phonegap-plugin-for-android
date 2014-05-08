@@ -21,23 +21,14 @@ This PhoneGap Plugin allows for:
 
 ### How to get the iBeacons in Region?
 
-On your `assets/www/js/index.js` file, on the `onDeviceReady` method
+On your `assets/www/js/index.js` file, on the `onDeviceReady` method:
 
 ```
-window.EstimoteBeacons.startRangingBeaconsInRegion(function () {
-    //every now and then get the list of beacons in range
-    myInterval = setInterval(function () {
-        window.EstimoteBeacons.getBeacons(function (data) {
-            /**
-             * The data variable contains the following information:
-             *
-             * proximityUUID
-             * major
-             * minor
-             * rssi
-             * macAddress
-             * measuredPower
-             **/
+window.EstimoteBeacons.startRangingBeaconsInRegion(function() {
+    // Every now and then get the list of beacons in range
+    myIinterval = setInterval(function() {
+        window.EstimoteBeacons.getBeacons(function(data) {
+            // data argument contains the following information: proximityUUID, major, minor, rssi, macAddress, measuredPower
         });
     }, 3000);
 });
@@ -56,23 +47,23 @@ bindEvents: function() {
 ```
 
 ```
-onPause: function () {
+onPause: function() {
     app.receivedEvent('pause');
-    window.EstimoteBeacons.stopEstimoteBeaconsDiscoveryForRegion(function () {
-        console.log("DEBUG :: Stopped Ranging");
+    window.EstimoteBeacons.stopEstimoteBeaconsDiscoveryForRegion(function() {
+        console.log("DEBUG :: Stop ranging");
     });
     clearInterval(myInterval);
 }
 ```
 
 ```
-onResume: function () {
+onResume: function() {
     app.receivedEvent('resume');
-    window.EstimoteBeacons.startRangingBeaconsInRegion(function () {
-        //every now and then get the list of beacons in range
-        myInterval = setInterval(function () {
-            window.EstimoteBeacons.getBeacons(function (data) {
-
+    window.EstimoteBeacons.startRangingBeaconsInRegion(function() {
+        // Every now and then get the list of beacons in range
+        myInterval = setInterval(function() {
+            window.EstimoteBeacons.getBeacons(function(data) {
+               ...
             });
         }, 3000);
     });
@@ -85,15 +76,15 @@ Not all methods are listed below, see EstimoteBeacons.js for a full list.
 
 ### startRangingBeaconsInRegion
 
-`EstimoteBeacons.startRangingBeaconsInRegion ...` Stats looking for beacons.
+`EstimoteBeacons.startRangingBeaconsInRegion(callback)` Starts looking for beacons.
 
 ### stopRangingBeaconsInRegion
 
-`EstimoteBeacons.stopRangingBeaconsInRegion(successCallback) ...` Stops looking for beacons.
+`EstimoteBeacons.stopRangingBeaconsInRegion(callback)` Stops looking for beacons.
 
 ### getBeacons
 
-`EstimoteBeacons.getBeacons(successCallback) ...` Returns latest list of beacons found by `startRangingBeaconsInRegion` or `startEstimoteBeaconsDiscoveryForRegion`. You have to call this method periodically to be up to date with latest results.
+`EstimoteBeacons.getBeacons(callback)` Returns latest list of beacons found by `startRangingBeaconsInRegion` or `startEstimoteBeaconsDiscoveryForRegion`. You have to call this method periodically to be up to date with latest results.
 
 ## Known Issues
 
