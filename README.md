@@ -33,6 +33,20 @@ Not all methods are listed below, see EstimoteBeacons.js for a full list.
 
 - Sometimes this PhoneGap Plugin stops working because of an error: "Bluetooth Share has stopped". This is an [Android bug](https://github.com/Estimote/Android-SDK#faq). When this error appears, it may be necessary to factory reset your phone.
 
+## FAQ
+
+1. For which Android mobile devices can I develop an hybrid app using this PhoneGap Plugin?
+
+- [Samsung Galaxy S3](http://www.samsung.com/global/galaxys3/)
+- [Samsung Galaxy S4](http://www.samsung.com/global/microsite/galaxys4/)
+- Samsung Galaxy S4 Mini
+- [Samsung Galaxy Note 2](http://www.samsung.com/galaxynote2/)
+- [Samsung Galaxy Note 3](http://www.samsung.com/us/guide-to-galaxy-smart-devices/galaxy-note-3.html)
+- [Google Nexus 7] (http://www.google.com/nexus/7/)
+- [Google Nexus 4](http://www.google.com/intl/all/nexus/4/)
+- [Google Nexus 5](http://www.google.com/nexus/5/)
+- etc.
+
 ## License
 
 MIT
