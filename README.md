@@ -1,6 +1,6 @@
 # Estimote iBeacons PhoneGap Plugin for Android
 
-**NOTE: THIS IS A WORK IN PROGRESS. IT'S NOT EVEN A BETA VERSION YET. EVERYTHING MAY CHANGE.**
+** *NOTE: THIS IS A WORK IN PROGRESS. IT'S NOT EVEN A BETA VERSION YET. EVERYTHING MAY CHANGE* .**
 
 ## Overview
 
@@ -121,7 +121,7 @@ Not all available methods are listed below, see [EstimoteBeacons.js](https://git
 
 2. Where can I find a sample app which uses this plugin?
 
-  You can find it in this [repository](https://github.com/hugohabel/MyEstimoteDemoApp).
+  Take a look at this [repository](https://github.com/mdc-ux-team/estimote-beacons-phonegap-sample-app).
 
 3. For which Android mobile devices could I develop an hybrid app using this plugin?
 
