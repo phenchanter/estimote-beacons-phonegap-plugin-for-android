@@ -74,6 +74,7 @@ var app = {
     });
   },
   ...
+};
 ```
 
 ## Available Methods
