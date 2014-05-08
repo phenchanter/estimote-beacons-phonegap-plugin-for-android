@@ -114,7 +114,7 @@ Not all methods are listed below, see [EstimoteBeacons.js](https://github.com/md
 
 2. Where can I find a sample app which uses this PhoneGap Plugin?
 
-You can find it in this [repository](https://github.com/hugohabel/MyEstimoteDemoApp).
+  You can find it in this [repository](https://github.com/hugohabel/MyEstimoteDemoApp).
 
 3. For which Android mobile devices could I develop an hybrid app using this PhoneGap Plugin?
 
