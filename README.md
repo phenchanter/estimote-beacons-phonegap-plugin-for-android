@@ -37,6 +37,7 @@ Not all methods are listed below, see EstimoteBeacons.js for a full list.
 
 1. For which Android mobile devices could I develop an hybrid app using this PhoneGap Plugin?
 
+These are some of them:
 - [Samsung Galaxy S3](http://www.samsung.com/global/galaxys3/)
 - [Samsung Galaxy S4](http://www.samsung.com/global/microsite/galaxys4/)
 - [Samsung Galaxy S4 Mini](http://www.samsung.com/global/microsite/galaxys4/)
@@ -45,8 +46,7 @@ Not all methods are listed below, see EstimoteBeacons.js for a full list.
 - [Samsung Galaxy Note 3](http://www.samsung.com/us/guide-to-galaxy-smart-devices/galaxy-note-3.html)
 - [Google Nexus 4](http://www.google.com/intl/all/nexus/4/)
 - [Google Nexus 5](http://www.google.com/nexus/5/)
-- [Google Nexus 7] (http://www.google.com/nexus/7/)
-- etc.
+- [Google Nexus 7](http://www.google.com/nexus/7/)
 
 2. Is there an app to check if my Android mobile device supports BLE?
 
