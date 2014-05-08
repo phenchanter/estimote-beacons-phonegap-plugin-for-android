@@ -18,6 +18,13 @@ This PhoneGap Plugin allows for:
 - [Android SDK](http://developer.android.com/sdk).
 - Mobile device with Android 4.3 or above and Bluetooth 4.0 or above ([Bluetooth Low Energy](http://en.wikipedia.org/wiki/Bluetooth_low_energy) or BLE).
 
+## Installation
+
+In order to add this PhoneGap Plugin into your app:
+```
+$ cordova plugin add https://github.com/mdc-ux-team/estimote-beacons-phonegap-plugin-for-android
+```
+
 ## Usage
 
 ### How to get the iBeacons in Region?
