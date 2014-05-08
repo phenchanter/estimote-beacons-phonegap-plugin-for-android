@@ -4,14 +4,18 @@
 
 ## Overview
 
-This PhoneGap 3.x Plugin for Android allows interaction with [Estimote iBeacons](http://estimote.com). Requirements are PhoneGap 3.x, Android 4.3 or above and Bluetooth 4.0 or above (a.k.a. [Bluetooth Low Energy](http://en.wikipedia.org/wiki/Bluetooth_low_energy) or BLE).
+This PhoneGap 3.x Plugin for Android allows interaction with [Estimote iBeacons](http://estimote.com). It is just a wrapper around [Estimote Android SDK](https://github.com/Estimote/Android-SDK). Names for [Available Methods] come from it.
 
-This PhoneGap 3.x Plugin is just a wrapper around [Estimote Android SDK](https://github.com/Estimote/Android-SDK). All naming conventions come from it.
-
-It allows for:
+This PhoneGap Plugin allows for:
 - beacon ranging (scan beacons and optionally filters them by their values).
 - beacon monitoring (monitors regions for those devices that have entered/exited a region).
 - beacon characteristics reading (proximity UUID, major & minor values, broadcasting power, advertising interval).
+
+### Requirements
+
+- PhoneGap 3.x.
+- Android 4.3 or above.
+- Bluetooth 4.0 or above ([Bluetooth Low Energy](http://en.wikipedia.org/wiki/Bluetooth_low_energy) or BLE).
 
 ## Usage
 
