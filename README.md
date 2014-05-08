@@ -13,6 +13,68 @@ It allows for:
 - beacon monitoring (monitors regions for those devices that have entered/exited a region).
 - beacon characteristics reading (proximity UUID, major & minor values, broadcasting power, advertising interval).
 
+## Usage
+
+### How to get the iBeacons in Region?
+
+On your `assets/www/js/index.js` file, on the `onDeviceReady` method
+
+```
+window.EstimoteBeacons.startRangingBeaconsInRegion(function () {
+    //every now and then get the list of beacons in range
+    myInterval = setInterval(function () {
+        window.EstimoteBeacons.getBeacons(function (data) {
+            /**
+             * The data variable contains the following information:
+             *
+             * proximityUUID
+             * major
+             * minor
+             * rssi
+             * macAddress
+             * measuredPower
+             **/
+        });
+    }, 3000);
+});
+```
+
+### How to bind events?
+
+On your `assets/www/js/index.js` file, on `var app` object:
+
+```
+bindEvents: function() {
+    document.addEventListener('deviceready', this.onDeviceReady, false);
+    document.addEventListener('pause', this.onPause, false);
+    document.addEventListener('resume', this.onResume, false);
+}
+```
+
+```
+onPause: function () {
+    app.receivedEvent('pause');
+    window.EstimoteBeacons.stopEstimoteBeaconsDiscoveryForRegion(function () {
+        console.log("DEBUG :: Stopped Ranging");
+    });
+    clearInterval(myInterval);
+}
+```
+
+```
+onResume: function () {
+    app.receivedEvent('resume');
+    window.EstimoteBeacons.startRangingBeaconsInRegion(function () {
+        //every now and then get the list of beacons in range
+        myInterval = setInterval(function () {
+            window.EstimoteBeacons.getBeacons(function (data) {
+
+            });
+        }, 3000);
+    });
+}
+```
+
 ## Available Methods
 
 Not all methods are listed below, see EstimoteBeacons.js for a full list.
