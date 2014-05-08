@@ -14,7 +14,7 @@ This PhoneGap Plugin allows for:
 ### Requirements
 
 - PhoneGap 3.x.
-- Mobile Device with Android 4.3 or above and Bluetooth 4.0 or above ([Bluetooth Low Energy](http://en.wikipedia.org/wiki/Bluetooth_low_energy) or BLE).
+- Mobile device with Android 4.3 or above and Bluetooth 4.0 or above ([Bluetooth Low Energy](http://en.wikipedia.org/wiki/Bluetooth_low_energy) or BLE).
 
 ## Usage
 
@@ -71,7 +71,7 @@ onResume: function() {
 
 ## Available Methods
 
-Not all methods are listed below, see [EstimoteBeacons.js](blob/master/www/EstimoteBeacons.js) for a full list.
+Not all methods are listed below, see [EstimoteBeacons.js](/blob/master/www/EstimoteBeacons.js) for a full list.
 
 ### startRangingBeaconsInRegion
 
