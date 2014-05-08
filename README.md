@@ -43,38 +43,37 @@ document.addEventListener('deviceready', onDeviceReady, false);
 
 ### How to bind events?
 
-On your `assets/www/js/index.js` file, on `var app` object:
+On your `assets/www/js/index.js` file:
 
 ```
-bindEvents: function() {
+var app = {
+  ...
+  bindEvents: function() {
     document.addEventListener('deviceready', this.onDeviceReady, false);
     document.addEventListener('pause', this.onPause, false);
     document.addEventListener('resume', this.onResume, false);
-}
-```
-
-```
-onPause: function() {
+  },
+  ...
+  onPause: function() {
     app.receivedEvent('pause');
     window.EstimoteBeacons.stopEstimoteBeaconsDiscoveryForRegion(function() {
         console.log("DEBUG :: Stop ranging");
     });
     clearInterval(myInterval);
-}
-```
-
-```
-onResume: function() {
+  },
+  ...
+  onResume: function() {
     app.receivedEvent('resume');
     window.EstimoteBeacons.startRangingBeaconsInRegion(function() {
-        // Every now and then get the list of beacons in range
-        myInterval = setInterval(function() {
-            window.EstimoteBeacons.getBeacons(function(data) {
-               ...
-            });
-        }, 3000);
+      // Every now and then get the list of beacons in range
+      myInterval = setInterval(function() {
+        window.EstimoteBeacons.getBeacons(function(data) {
+          ...
+        });
+      }, 3000);
     });
-}
+  },
+  ...
 ```
 
 ## Available Methods
