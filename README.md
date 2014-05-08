@@ -140,6 +140,11 @@ Not all methods are listed below, see [EstimoteBeacons.js](https://github.com/md
 
   - [Check if your Android device supports Bluetooth Low Energy (BLE)](http://weimenglee.blogspot.com/2013/10/check-if-your-android-device-supports.html) (NOT TESTED)
   - [BLE Checker](https://play.google.com/store/apps/details?id=com.magicalboy.btd) (NOT TESTED)
+  - 
+
+5. Is there an Estimote iBeacons PhoneGap Plugin for iOS?
+
+  Take a look at the [phonegap-estimotebeacons](https://github.com/kdzwinel/phonegap-estimotebeacons) project being developed by [Konrad Dzwinel](https://github.com/kdzwinel). 
 
 ## License
 
