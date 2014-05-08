@@ -4,9 +4,9 @@
 
 ## Overview
 
-This PhoneGap 3.x Plugin for Android allows interaction with [Estimote iBeacons](http://estimote.com). This PhoneGap Plugin is just a wrapper around [Estimote Android SDK](https://github.com/Estimote/Android-SDK). Names for [Available Methods](#available-methods) come from it.
+This is a PhoneGap 3.x plugin for Android which allows interaction with [Estimote iBeacons](http://estimote.com). This plugin is just a wrapper around [Estimote Android SDK](https://github.com/Estimote/Android-SDK). Names for [Available Methods](#available-methods) come from it.
 
-This PhoneGap Plugin allows for:
+This plugin allows for:
 - beacon ranging: Scan beacons and optionally filters them by their values.
 - beacon monitoring: Monitor regions for those devices that have entered/exited a region.
 - beacon characteristics reading (proximity UUID, major & minor values, etc.).
@@ -20,7 +20,7 @@ This PhoneGap Plugin allows for:
 
 ## Installation
 
-In order to add this PhoneGap Plugin into your app:
+In order to add this plugin into your app:
 ```
 $ cordova plugin add https://github.com/mdc-ux-team/estimote-beacons-phonegap-plugin-for-android
 ```
@@ -105,7 +105,7 @@ Not all available methods are listed below, see [EstimoteBeacons.js](https://git
 
 ## Known Issues
 
-- Sometimes this PhoneGap Plugin stops working because of an error: "Bluetooth Share has stopped". This is an [Android bug](https://code.google.com/p/android/issues/detail?id=67272). For more information about this bug read the [bullet 2 within the FAQ section](https://github.com/Estimote/Android-SDK#faq) of the [Estimote Android SDK](https://github.com/Estimote/Android-SDK) repo. When this error appears, it may be necessary to factory reset your device.
+- Sometimes this plugin stops working because of an error: "Bluetooth Share has stopped". This is an [Android bug](https://code.google.com/p/android/issues/detail?id=67272). For more information about this bug read the [bullet 2 within the FAQ section](https://github.com/Estimote/Android-SDK#faq) of [Estimote Android SDK](https://github.com/Estimote/Android-SDK). When this error appears, it may be necessary to factory reset your device.
 
 ## FAQ
 
@@ -119,11 +119,11 @@ Not all available methods are listed below, see [EstimoteBeacons.js](https://git
   
   Read [Apache Cordova - The Command Line Interface](http://cordova.apache.org/docs/en/3.4.0/guide_cli_index.md.html#The%20Command-Line%20Interface) for more information.
 
-2. Where can I find a sample app which uses this PhoneGap Plugin?
+2. Where can I find a sample app which uses this plugin?
 
   You can find it in this [repository](https://github.com/hugohabel/MyEstimoteDemoApp).
 
-3. For which Android mobile devices could I develop an hybrid app using this PhoneGap Plugin?
+3. For which Android mobile devices could I develop an hybrid app using this plugin?
 
   These could be some of them:
   - [Samsung Galaxy S3](http://www.samsung.com/global/galaxys3/)
