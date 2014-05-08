@@ -19,19 +19,19 @@ Not all methods are listed below, see EstimoteBeacons.js for a full list.
 
 ### startRangingBeaconsInRegion
 
-EstimoteBeacons.startRangingBeaconsInRegion ... Stats looking for beacons.
+`EstimoteBeacons.startRangingBeaconsInRegion ...` Stats looking for beacons.
 
 ### stopRangingBeaconsInRegion
 
-EstimoteBeacons.stopRangingBeaconsInRegion(successCallback) ... Stops looking for beacons.
+`EstimoteBeacons.stopRangingBeaconsInRegion(successCallback) ...` Stops looking for beacons.
 
 ### getBeacons
 
-EstimoteBeacons.getBeacons(successCallback) ... Returns latest list of beacons found by startRangingBeaconsInRegion or startEstimoteBeaconsDiscoveryForRegion. You have to call this method periodically to be up to date with latest results.
+`EstimoteBeacons.getBeacons(successCallback) ...` Returns latest list of beacons found by `startRangingBeaconsInRegion` or `startEstimoteBeaconsDiscoveryForRegion`. You have to call this method periodically to be up to date with latest results.
 
 ## Known Issues
 
-- Sometimes this PhoneGap Plugin stops working because of an error: "Bluetooth Share has stopped". This is an [Android bug](https://github.com/Estimote/Android-SDK#faq). When this happens, it may be necessary to factory reset your phone.
+- Sometimes this PhoneGap Plugin stops working because of an error: "Bluetooth Share has stopped". This is an [Android bug](https://github.com/Estimote/Android-SDK#faq). When this error appears, it may be necessary to factory reset your phone.
 
 ## License
 
