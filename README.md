@@ -111,13 +111,15 @@ Not all available methods are listed below, see [EstimoteBeacons.js](https://git
 
 1. How to create a Cordova Project/App for Android?
 
+  Use these commands:
+  
   ```
   $ cordova create mycordovaapp com.mycompany.mycordovaapp MyCordovaApp
   $ cd mycordovaapp
   $ cordova platform add android
   ```
   
-  Read [The Command Line Interface](http://cordova.apache.org/docs/en/3.4.0/guide_cli_index.md.html#The%20Command-Line%20Interface) within Apache Cordova Documentation for more information.
+  Read [The Command Line Interface](http://cordova.apache.org/docs/en/3.4.0/guide_cli_index.md.html#The%20Command-Line%20Interface) within [Apache Cordova Documentation](http://cordova.apache.org/docs/en/3.4.0/) for more information.
 
 2. Where can I find a sample app which uses this plugin?
 
@@ -138,7 +140,7 @@ Not all available methods are listed below, see [EstimoteBeacons.js](https://git
 
 4. Is there an app to check if my Android mobile device supports BLE?
 
-  [BLE Checker](https://play.google.com/store/apps/details?id=com.magicalboy.btd). We have tested it in a couple of Android mobile devices and sems to work fine.
+  [BLE Checker](https://play.google.com/store/apps/details?id=com.magicalboy.btd). We have tested this app in a couple of Android mobile devices and sems to work fine.
 
 5. Is there an Estimote iBeacons PhoneGap Plugin for iOS?
 
