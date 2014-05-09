@@ -11,7 +11,7 @@ This plugin allows for:
 - beacon monitoring: Monitor regions for those devices that have entered/exited a region.
 - beacon characteristics reading (proximity UUID, major & minor values, etc.).
 
-### Requirements
+## Requirements
 
 - [PhoneGap 3.x](http://phonegap.com/install/).
 - [Eclipse](https://www.eclipse.org/downloads/) or [Android Studio](http://developer.android.com/sdk/installing/studio.html) IDE.
