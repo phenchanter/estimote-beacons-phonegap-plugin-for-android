@@ -105,11 +105,11 @@ Not all available methods are listed below, see [EstimoteBeacons.js](https://git
 
 ## Known Issues
 
-- Sometimes this plugin stops working because of an error: "Bluetooth Share has stopped". This is an [Android bug](https://code.google.com/p/android/issues/detail?id=67272). For more information about this bug read the [bullet 2 within the FAQ section](https://github.com/Estimote/Android-SDK#faq) of [Estimote Android SDK](https://github.com/Estimote/Android-SDK). When this error appears, it may be necessary to factory reset your device. **BACKUP OR SYNCHRONIZE YOUR DATA BEFORE FACTORY RESET YOUR DEVICE**.
+- Sometimes this plugin stops working because of an error: "Bluetooth Share has stopped". This is an [Android bug](https://code.google.com/p/android/issues/detail?id=67272). For more information about this bug read [bullet 2 within the FAQ section](https://github.com/Estimote/Android-SDK#faq) of [Estimote Android SDK](https://github.com/Estimote/Android-SDK). When this error appears, it may be necessary to factory reset your device. **NOTE: BACKUP OR SYNCHRONIZE YOUR DATA BEFORE FACTORY RESET YOUR DEVICE**.
 
 ## FAQ
 
-1. How to create a Cordova Project/App for Android?
+1. How to create a Cordova project/app for Android?
 
   Use these commands:
   
