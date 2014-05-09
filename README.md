@@ -23,11 +23,13 @@ This plugin allows for:
 In order to add this plugin into your app:
 
 Using PhoneGap:
+
 ```
 $ phonegap local plugin add https://github.com/mdc-ux-team/estimote-beacons-phonegap-plugin-for-android.git
 ```
 
 Using Cordova:
+
 ```
 $ cordova plugin add https://github.com/mdc-ux-team/estimote-beacons-phonegap-plugin-for-android.git
 ```
