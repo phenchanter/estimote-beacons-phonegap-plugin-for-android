@@ -126,7 +126,7 @@ var app = {
   $ phonegap build android
   ```
   
-  Read [The Command-Line Interface](http://docs.phonegap.com/en/3.0.0/guide_cli_index.md.html) within [PhoneGap Documentation](http://docs.phonegap.com/en/3.0.0/) for more information.
+  Read [The Command-Line Interface](http://docs.phonegap.com/en/3.0.0/guide_cli_index.md.html) within [PhoneGap Documentation](http://docs.phonegap.com/) for more information.
   
   Using Cordova:
   
