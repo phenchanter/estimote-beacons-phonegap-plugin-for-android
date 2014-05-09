@@ -8,7 +8,6 @@ This is a [PhoneGap](http://phonegap.com/)/[Cordova](http://cordova.apache.org/)
 
 This plugin allows for:
 - beacon ranging: Scan beacons and optionally filter them by their values.
-- beacon monitoring: Monitor regions for those devices that have entered/exited a region.
 - beacon characteristics reading (proximity UUID, major & minor values, etc.).
 
 ## Requirements
