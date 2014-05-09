@@ -89,7 +89,7 @@ var app = {
 
 ## Available Methods
 
-Not all available methods are listed below, see [EstimoteBeacons.js](https://github.com/mdc-ux-team/estimote-beacons-phonegap-plugin-for-android//blob/master/www/EstimoteBeacons.js) for a full list.
+Not all available methods are listed below, see [EstimoteBeacons.js](https://github.com/mdc-ux-team/estimote-beacons-phonegap-plugin-for-android/blob/master/www/EstimoteBeacons.js) for a full list.
 
 ### startRangingBeaconsInRegion
 
@@ -144,7 +144,7 @@ Not all available methods are listed below, see [EstimoteBeacons.js](https://git
 
 5. Is there an Estimote iBeacons PhoneGap Plugin for iOS?
 
-  Take a look at the [phonegap-estimotebeacons](https://github.com/kdzwinel/phonegap-estimotebeacons) project being developed by [Konrad Dzwinel](https://github.com/kdzwinel). 
+  Yes. Take a look at the [phonegap-estimotebeacons](https://github.com/kdzwinel/phonegap-estimotebeacons) project being developed by [Konrad Dzwinel](https://github.com/kdzwinel). 
 
 ## License
 
