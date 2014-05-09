@@ -154,7 +154,7 @@ Not all available methods are listed below, see [EstimoteBeacons.js](https://git
 
   [BLE Checker](https://play.google.com/store/apps/details?id=com.magicalboy.btd). We have tested this app in a couple of Android mobile devices and it seems to work fine.
 
-5. Is there an Estimote Beacons PhoneGap/Cordova Plugin for iOS?
+5. Is there an Estimote iBeacons PhoneGap/Cordova Plugin for iOS?
 
   Yes. Take a look at the [phonegap-estimotebeacons](https://github.com/kdzwinel/phonegap-estimotebeacons) project being developed by [Konrad Dzwinel](https://github.com/kdzwinel). 
 
