@@ -91,8 +91,6 @@ var app = {
 
 ## Available Methods
 
-Not all available methods are listed below, see [EstimoteBeacons.js](https://github.com/mdc-ux-team/estimote-beacons-phonegap-plugin-for-android/blob/master/www/EstimoteBeacons.js) for a full list.
-
 ### startRangingBeaconsInRegion
 
 `EstimoteBeacons.startRangingBeaconsInRegion(successCallback)` Starts looking for beacons.
@@ -100,6 +98,14 @@ Not all available methods are listed below, see [EstimoteBeacons.js](https://git
 ### stopRangingBeaconsInRegion
 
 `EstimoteBeacons.stopRangingBeaconsInRegion(successCallback)` Stops looking for beacons.
+
+### startEstimoteBeaconsDiscoveryForRegion
+
+`EstimoteBeacons.startEstimoteBeaconsDiscoveryForRegion(successCallback)` Starts discoverying beacons.
+
+### stopEstimoteBeaconsDiscoveryForRegion
+
+`EstimoteBeacons.stopEstimoteBeaconsDiscoveryForRegion(successCallback)` Stops discoverying beacons.
 
 ### getBeacons
 
