@@ -29,7 +29,7 @@ $ cordova plugin add https://github.com/mdc-ux-team/estimote-beacons-phonegap-pl
 
 ### How to get the iBeacons in Region?
 
-In your `assets/www/js/index.js` file:
+In your `index.js` file:
 
 ```
 var myInterval = null;
@@ -41,7 +41,7 @@ var app = {
       // Every now and then get the list of beacons in range
       myInterval = setInterval(function() {
         window.EstimoteBeacons.getBeacons(function(data) {
-            // data argument contains the following information: proximityUUID, major, minor, rssi, macAddress, measuredPower
+            // data contains the following information: proximityUUID, major, minor, rssi, macAddress, measuredPower
             ...
         });
       }, 3000);
@@ -53,7 +53,7 @@ var app = {
 
 ### How to bind events?
 
-In your `assets/www/js/index.js` file:
+In your `index.js` file:
 
 ```
 var app = {
