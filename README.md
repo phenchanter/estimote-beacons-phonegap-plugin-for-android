@@ -93,19 +93,19 @@ Not all available methods are listed below, see [EstimoteBeacons.js](https://git
 
 ### startRangingBeaconsInRegion
 
-`EstimoteBeacons.startRangingBeaconsInRegion(callback)` Starts looking for beacons.
+`EstimoteBeacons.startRangingBeaconsInRegion(successCallback)` Starts looking for beacons.
 
 ### stopRangingBeaconsInRegion
 
-`EstimoteBeacons.stopRangingBeaconsInRegion(callback)` Stops looking for beacons.
+`EstimoteBeacons.stopRangingBeaconsInRegion(successCallback)` Stops looking for beacons.
 
 ### getBeacons
 
-`EstimoteBeacons.getBeacons(callback)` Returns latest list of beacons found by `startRangingBeaconsInRegion` or `startEstimoteBeaconsDiscoveryForRegion`. You have to call this method periodically to be up to date with latest results.
+`EstimoteBeacons.getBeacons(successCallback)` Returns latest list of beacons found by `startRangingBeaconsInRegion` or `startEstimoteBeaconsDiscoveryForRegion`. You have to call this method periodically to be up to date with latest results.
 
 ## Known Issues
 
-- Sometimes this plugin stops working because of an error: "Bluetooth Share has stopped". This is an [Android bug](https://code.google.com/p/android/issues/detail?id=67272). For more information about this bug read [bullet 2 within the FAQ section](https://github.com/Estimote/Android-SDK#faq) of [Estimote Android SDK](https://github.com/Estimote/Android-SDK). When this error appears, it may be necessary to factory reset your device. **NOTE: BACKUP OR SYNCHRONIZE YOUR DATA BEFORE FACTORY RESET YOUR DEVICE**.
+- Sometimes this plugin stops working because of an error: "Bluetooth Share has stopped". This is an [Android bug](https://code.google.com/p/android/issues/detail?id=67272). For more information about this bug read [bullet 2 within the FAQ section](https://github.com/Estimote/Android-SDK#faq) of [Estimote Android SDK](https://github.com/Estimote/Android-SDK). When this error appears, it may be necessary to factory reset your device. **NOTE: BACKUP YOUR DATA BEFORE FACTORY RESET YOUR DEVICE**.
 
 ## FAQ
 
