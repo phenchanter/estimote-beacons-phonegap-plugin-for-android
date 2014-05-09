@@ -138,11 +138,13 @@ var app = {
   
   Read [The Command-Line Interface](http://cordova.apache.org/docs/en/3.4.0/guide_cli_index.md.html#The%20Command-Line%20Interface) within [Apache Cordova Documentation](http://cordova.apache.org/docs/en/3.4.0/) for more information.
 
-2. Where can I find a sample app which uses this plugin?
+<!--
+1. Where can I find a sample app which uses this plugin?
 
   Take a look at [estimote-beacons-phonegap-sample-app](https://github.com/mdc-ux-team/estimote-beacons-phonegap-sample-app).
+-->
 
-3. For which Android mobile devices could I develop an hybrid app using this plugin?
+1. For which Android mobile devices could I develop an hybrid app using this plugin?
 
   These could be some of them:
   - [Samsung Galaxy S3](http://www.samsung.com/global/galaxys3/)
@@ -155,11 +157,11 @@ var app = {
   - [Google Nexus 5](http://www.google.com/nexus/5/)
   - [Google Nexus 7](http://www.google.com/nexus/7/)
 
-4. Is there an app to check if my Android mobile device supports BLE?
+1. Is there an app to check if my Android mobile device supports BLE?
 
   [BLE Checker](https://play.google.com/store/apps/details?id=com.magicalboy.btd). We have tested this app in a couple of Android mobile devices and it seems to work fine.
 
-5. Is there an Estimote iBeacons PhoneGap/Cordova Plugin for iOS?
+1. Is there an Estimote iBeacons PhoneGap/Cordova Plugin for iOS?
 
   Yes. Take a look at the [phonegap-estimotebeacons](https://github.com/kdzwinel/phonegap-estimotebeacons) project being developed by [Konrad Dzwinel](https://github.com/kdzwinel). 
 
