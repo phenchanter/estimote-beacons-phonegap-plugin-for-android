@@ -138,8 +138,7 @@ Not all available methods are listed below, see [EstimoteBeacons.js](https://git
 
 4. Is there an app to check if my Android mobile device supports BLE?
 
-  - [Check if your Android device supports Bluetooth Low Energy (BLE)](http://weimenglee.blogspot.com/2013/10/check-if-your-android-device-supports.html) (NOT TESTED).
-  - [BLE Checker](https://play.google.com/store/apps/details?id=com.magicalboy.btd) (NOT TESTED).
+  [BLE Checker](https://play.google.com/store/apps/details?id=com.magicalboy.btd). We have tested it in some devices and sems to work fine.
 
 5. Is there an Estimote iBeacons PhoneGap Plugin for iOS?
 
