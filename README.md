@@ -1,10 +1,10 @@
-# Estimote iBeacons PhoneGap Plugin for Android
+# Estimote iBeacons PhoneGap/Cordova Plugin for Android
 
 **_NOTE: THIS IS A WORK IN PROGRESS. IT'S NOT EVEN A BETA VERSION YET. EVERYTHING MAY CHANGE_.**
 
 ## Overview
 
-This is a PhoneGap 3.x plugin for Android which allows interaction with [Estimote iBeacons](http://estimote.com). This plugin is just a wrapper around [Estimote Android SDK](https://github.com/Estimote/Android-SDK). Names for [Available Methods](#available-methods) come from it.
+This is a [PhoneGap](http://phonegap.com/)/[Cordova](http://cordova.apache.org/) 3.x plugin for Android which allows interaction with [Estimote iBeacons](http://estimote.com). This plugin is just a wrapper around [Estimote Android SDK](https://github.com/Estimote/Android-SDK). Names for [Available Methods](#available-methods) come from it.
 
 This plugin allows for:
 - beacon ranging: Scan beacons and optionally filter them by their values.
@@ -13,16 +13,23 @@ This plugin allows for:
 
 ## Requirements
 
-- [PhoneGap 3.x](http://phonegap.com/install/).
+- [Adobe PhoneGap 3.x](http://phonegap.com/install/) or [Apache Cordova 3.x](http://cordova.apache.org/#download).
 - [Eclipse](https://www.eclipse.org/downloads/) or [Android Studio](http://developer.android.com/sdk/installing/studio.html) IDE.
 - [Android SDK](http://developer.android.com/sdk).
-- Mobile device with Android 4.3 or above and Bluetooth 4.0 or above ([Bluetooth Low Energy](http://en.wikipedia.org/wiki/Bluetooth_low_energy) or BLE).
+- Mobile device with Android 4.3 or above and Bluetooth 4.0 or above (a.k.a. [Bluetooth Low Energy](http://en.wikipedia.org/wiki/Bluetooth_low_energy) or BLE).
 
 ## Installation
 
 In order to add this plugin into your app:
+
+Using PhoneGap:
 ```
-$ cordova plugin add https://github.com/mdc-ux-team/estimote-beacons-phonegap-plugin-for-android
+$ phonegap local plugin add https://github.com/mdc-ux-team/estimote-beacons-phonegap-plugin-for-android.git
+```
+
+Using Cordova:
+```
+$ cordova plugin add https://github.com/mdc-ux-team/estimote-beacons-phonegap-plugin-for-android.git
 ```
 
 ## Usage
@@ -102,9 +109,19 @@ Not all available methods are listed below, see [EstimoteBeacons.js](https://git
 
 ## FAQ
 
-1. How to create a Cordova project/app for Android?
+1. How to create a PhoneGap/Cordova project/app for Android?
 
-  Use these commands:
+  Using PhoneGap:
+  
+  ```
+  $ phonegap create myphonegapapp com.mycompany.myphonegapapp MyPhoneGapApp
+  $ cd myphonegapapp
+  $ phonegap build android
+  ```
+  
+  Read [The Command-Line Interface](http://docs.phonegap.com/en/3.0.0/guide_cli_index.md.html) within [PhoneGap Documentation](http://docs.phonegap.com/en/3.0.0/) for more information.
+  
+  Using Cordova:
   
   ```
   $ cordova create mycordovaapp com.mycompany.mycordovaapp MyCordovaApp
@@ -112,7 +129,7 @@ Not all available methods are listed below, see [EstimoteBeacons.js](https://git
   $ cordova platform add android
   ```
   
-  Read [The Command Line Interface](http://cordova.apache.org/docs/en/3.4.0/guide_cli_index.md.html#The%20Command-Line%20Interface) within [Apache Cordova Documentation](http://cordova.apache.org/docs/en/3.4.0/) for more information.
+  Read [The Command-Line Interface](http://cordova.apache.org/docs/en/3.4.0/guide_cli_index.md.html#The%20Command-Line%20Interface) within [Apache Cordova Documentation](http://cordova.apache.org/docs/en/3.4.0/) for more information.
 
 2. Where can I find a sample app which uses this plugin?
 
@@ -135,7 +152,7 @@ Not all available methods are listed below, see [EstimoteBeacons.js](https://git
 
   [BLE Checker](https://play.google.com/store/apps/details?id=com.magicalboy.btd). We have tested this app in a couple of Android mobile devices and it seems to work fine.
 
-5. Is there an Estimote iBeacons PhoneGap Plugin for iOS?
+5. Is there an Estimote Beacons PhoneGap/Cordova Plugin for iOS?
 
   Yes. Take a look at the [phonegap-estimotebeacons](https://github.com/kdzwinel/phonegap-estimotebeacons) project being developed by [Konrad Dzwinel](https://github.com/kdzwinel). 
 
