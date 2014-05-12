@@ -1,6 +1,6 @@
 /* global cordova */
 
-cordova.define('me.habel.MyEstimotePlugin.EstimoteBeacons', function(require, exports, module) {
+cordova.define('ux.mx.phonegap.EstimoteBeacons', function(require, exports, module) {
     'use strict';
 
     var exec = require('cordova/exec');
@@ -9,7 +9,8 @@ cordova.define('me.habel.MyEstimotePlugin.EstimoteBeacons', function(require, ex
     // Constants
     // ======================
 
-    var CLASS_NAME = 'EstimoteBeacons';
+    var CLASS_NAME = 'EstimoteBeacons',
+        EMPTY_FUNCTION = function() {};
 
     // ======================
     // Helper Functions
@@ -30,7 +31,16 @@ cordova.define('me.habel.MyEstimotePlugin.EstimoteBeacons', function(require, ex
      * @return {boolean} True if passed Object is an integer, otherwise false
      */
     function isInt(o) {
-        return (o && !isNaN(parseInt(o, 10)) && (parseFloat(o) == parseInt(o, 10)));
+        return (!isNaN(parseInt(o, 10)) && (parseFloat(o) == parseInt(o, 10)));
+    }
+
+    /**
+     * Returns true if passed Object is equal to null or is empty, otherwise false.
+     * @param {Object} o Object to be verified
+     * @returns {boolean} True if passed Object is equal to null or is empty, otherwise false
+     */
+    function isNullOrEmpty(o) {
+        return (!o || o.length === 0);
     }
 
     /**
@@ -44,11 +54,12 @@ cordova.define('me.habel.MyEstimotePlugin.EstimoteBeacons', function(require, ex
 
     /**
      * Logs error message.
-     * @param {String} methodName Name of the method
      * @param {String} errorMessage Error message
+     * @param {String} [methodName] Name of the method in which the error occurred
      */
-    function logError(methodName, errorMessage) {
-        console.error(CLASS_NAME + '.' + methodName + ' error: ' + errorMessage);
+    function logError(errorMessage, methodName) {
+        if(!isNullOrEmpty(methodName)) errorMessage = CLASS_NAME + '.' + methodName + ' error: ' + errorMessage;
+        console.error(errorMessage);
     }
 
     /**
@@ -62,13 +73,13 @@ cordova.define('me.habel.MyEstimotePlugin.EstimoteBeacons', function(require, ex
         var METHOD_NAME = 'startEstimoteBeaconsDiscoveryForRegion';
 
         if(!isFunction(successCallback)) {
-            logError(METHOD_NAME, 'successCallback parameter must be a function');
+            logError('successCallback parameter must be a function', METHOD_NAME);
             return;
         }
 
         exec(
             successCallback,
-            function() {},
+            EMPTY_FUNCTION,
             CLASS_NAME,
             METHOD_NAME,
             []
@@ -79,13 +90,13 @@ cordova.define('me.habel.MyEstimotePlugin.EstimoteBeacons', function(require, ex
         var METHOD_NAME = 'stopEstimoteBeaconsDiscoveryForRegion';
 
         if(!isFunction(successCallback)) {
-            logError(METHOD_NAME, 'successCallback parameter must be a function');
+            logError('successCallback parameter must be a function', METHOD_NAME);
             return;
         }
 
         exec(
             successCallback,
-            function() {},
+            EMPTY_FUNCTION,
             CLASS_NAME,
             METHOD_NAME,
             []
@@ -96,13 +107,13 @@ cordova.define('me.habel.MyEstimotePlugin.EstimoteBeacons', function(require, ex
         var METHOD_NAME = 'startRangingBeaconsInRegion';
 
         if(!isFunction(successCallback)) {
-            logError(METHOD_NAME, 'successCallback parameter must be a function');
+            logError('successCallback parameter must be a function', METHOD_NAME);
             return;
         }
 
         exec(
             successCallback,
-            function() {},
+            EMPTY_FUNCTION,
             CLASS_NAME,
             METHOD_NAME,
             []
@@ -113,13 +124,13 @@ cordova.define('me.habel.MyEstimotePlugin.EstimoteBeacons', function(require, ex
         var METHOD_NAME = 'stopRangingBeaconsInRegion';
 
         if(!isFunction(successCallback)) {
-            logError(METHOD_NAME, 'successCallback parameter must be a function');
+            logError('successCallback parameter must be a function', METHOD_NAME);
             return;
         }
     
         exec(
             successCallback,
-            function() {},
+            EMPTY_FUNCTION,
             CLASS_NAME,
             METHOD_NAME,
             []
@@ -135,27 +146,26 @@ cordova.define('me.habel.MyEstimotePlugin.EstimoteBeacons', function(require, ex
         errorCallback = isFunction(minorOrCallback) ? minorOrCallback : errorCallback;
 
         if(!errorCallback) {
-            errorCallback = function() {};
+            errorCallback = EMPTY_FUNCTION;
         }
-
         if(!isString(id)) {
-            logError(METHOD_NAME, 'id parameter must be a string');
+            logError('id parameter must be a string', METHOD_NAME);
             return;
         }
-        if(!isInt(major)) {
-            logError(METHOD_NAME, 'major parameter must be a valid integer');
+        if(major && !isInt(major)) {
+            logError('major parameter must be a valid integer', METHOD_NAME);
             return;
         }
-        if(!isInt(minor)) {
-            logError(METHOD_NAME, 'minor parameter must be a valid integer');
+        if(minor && !isInt(minor)) {
+            logError('minor parameter must be a valid integer', METHOD_NAME);
             return;
         }
         if(!isFunction(successCallback)) {
-            logError(METHOD_NAME, 'successCallback parameter must be a function');
+            logError('successCallback parameter must be a function', METHOD_NAME);
             return;
         }
         if(!isFunction(errorCallback)) {
-            logError(METHOD_NAME, 'errorCallback parameter must be a function');
+            logError('errorCallback parameter must be a function', METHOD_NAME);
             return;
         }
 
@@ -172,19 +182,18 @@ cordova.define('me.habel.MyEstimotePlugin.EstimoteBeacons', function(require, ex
         var METHOD_NAME = 'stopMonitoringForRegion';
 
         if(!errorCallback) {
-            errorCallback = function() {};
+            errorCallback = EMPTY_FUNCTION;
         }
-
         if(!isString(id)) {
-            logError(METHOD_NAME, 'id parameter must be a string');
+            logError('id parameter must be a string', METHOD_NAME);
             return;
         }
         if(!isFunction(successCallback)) {
-            logError(METHOD_NAME, 'successCallback parameter must be a function');
+            logError('successCallback parameter must be a function', METHOD_NAME);
             return;
         }
         if(!isFunction(errorCallback)) {
-            logError(METHOD_NAME, 'errorCallback parameter must be a function');
+            logError('errorCallback parameter must be a function', METHOD_NAME);
             return;
         }
 
@@ -201,19 +210,18 @@ cordova.define('me.habel.MyEstimotePlugin.EstimoteBeacons', function(require, ex
         var METHOD_NAME = 'getBeaconByIdx';
 
         if(!errorCallback) {
-            errorCallback = function() {};
+            errorCallback = EMPTY_FUNCTION;
         }
-
         if(!isInt(idx)) {
-            logError(METHOD_NAME, 'idx parameter must be a valid integer');
+            logError('idx parameter must be a valid integer', METHOD_NAME);
             return;
         }
         if(!isFunction(successCallback)) {
-            logError(METHOD_NAME, 'successCallback parameter must be a function');
+            logError('successCallback parameter must be a function', METHOD_NAME);
             return;
         }
         if(!isFunction(errorCallback)) {
-            logError(METHOD_NAME, 'errorCallback parameter must be a function');
+            logError('errorCallback parameter must be a function', METHOD_NAME);
             return;
         }
 
@@ -230,15 +238,14 @@ cordova.define('me.habel.MyEstimotePlugin.EstimoteBeacons', function(require, ex
         var METHOD_NAME = 'getClosestBeacon';
 
         if(!errorCallback) {
-            errorCallback = function() {};
+            errorCallback = EMPTY_FUNCTION;
         }
-
         if(!isFunction(successCallback)) {
-            logError(METHOD_NAME, 'successCallback parameter must be a function');
+            logError('successCallback parameter must be a function', METHOD_NAME);
             return;
         }
         if(!isFunction(errorCallback)) {
-            logError(METHOD_NAME, 'errorCallback parameter must be a function');
+            logError('errorCallback parameter must be a function', METHOD_NAME);
             return;
         }
 
@@ -255,15 +262,14 @@ cordova.define('me.habel.MyEstimotePlugin.EstimoteBeacons', function(require, ex
         var METHOD_NAME = 'getConnectedBeacon';
 
         if(!errorCallback) {
-            errorCallback = function() {};
+            errorCallback = EMPTY_FUNCTION;
         }
-
         if(!isFunction(successCallback)) {
-            logError(METHOD_NAME, 'successCallback parameter must be a function');
+            logError('successCallback parameter must be a function', METHOD_NAME);
             return;
         }
         if(!isFunction(errorCallback)) {
-            logError(METHOD_NAME, 'errorCallback parameter must be a function');
+            logError('errorCallback parameter must be a function', METHOD_NAME);
             return;
         }
 
@@ -280,23 +286,22 @@ cordova.define('me.habel.MyEstimotePlugin.EstimoteBeacons', function(require, ex
         var METHOD_NAME = 'connectToBeacon';
 
         if(!errorCallback) {
-            errorCallback = function() {};
+            errorCallback = EMPTY_FUNCTION;
         }
-
         if(!isInt(major)) {
-            logError(METHOD_NAME, 'major parameter must be a valid integer');
+            logError('major parameter must be a valid integer', METHOD_NAME);
             return;
         }
         if(!isInt(minor)) {
-            logError(METHOD_NAME, 'minor parameter must be a valid integer');
+            logError('minor parameter must be a valid integer', METHOD_NAME);
             return;
         }
         if(!isFunction(successCallback)) {
-            logError(METHOD_NAME, 'successCallback parameter must be a function');
+            logError('successCallback parameter must be a function', METHOD_NAME);
             return;
         }
         if(!isFunction(errorCallback)) {
-            logError(METHOD_NAME, 'errorCallback parameter must be a function');
+            logError('errorCallback parameter must be a function', METHOD_NAME);
             return;
         }
 
@@ -313,15 +318,14 @@ cordova.define('me.habel.MyEstimotePlugin.EstimoteBeacons', function(require, ex
         var METHOD_NAME = 'connectToBeaconByMacAddress';
 
         if(!errorCallback) {
-            errorCallback = function() {};
+            errorCallback = EMPTY_FUNCTION;
         }
-
         if(!isFunction(successCallback)) {
-            logError(METHOD_NAME, 'successCallback parameter must be a function');
+            logError('successCallback parameter must be a function', METHOD_NAME);
             return;
         }
         if(!isFunction(errorCallback)) {
-            logError(METHOD_NAME, 'errorCallback parameter must be a function');
+            logError('errorCallback parameter must be a function', METHOD_NAME);
             return;
         }
 
@@ -338,15 +342,14 @@ cordova.define('me.habel.MyEstimotePlugin.EstimoteBeacons', function(require, ex
         var METHOD_NAME = 'disconnectFromBeacon';
 
         if(!errorCallback) {
-            errorCallback = function() {};
+            errorCallback = EMPTY_FUNCTION;
         }
-
         if(!isFunction(successCallback)) {
-            logError(METHOD_NAME, 'successCallback parameter must be a function');
+            logError('successCallback parameter must be a function', METHOD_NAME);
             return;
         }
         if(!isFunction(errorCallback)) {
-            logError(METHOD_NAME, 'errorCallback parameter must be a function');
+            logError('errorCallback parameter must be a function', METHOD_NAME);
             return;
         }
     
@@ -363,20 +366,19 @@ cordova.define('me.habel.MyEstimotePlugin.EstimoteBeacons', function(require, ex
         var METHOD_NAME= 'setFrequencyOfConnectedBeacon';
 
         if(!errorCallback) {
-            errorCallback = function() {};
+            errorCallback = EMPTY_FUNCTION;
         }
-    
         if(!isInt(frequency)) {
-            logError(METHOD_NAME, 'frequency parameter must be a valid integer');
+            logError('frequency parameter must be a valid integer', METHOD_NAME);
             return;
         }
         if(!isFunction(successCallback)) {
-            logError(METHOD_NAME, 'successCallback parameter must be a function');
+            logError('successCallback parameter must be a function', METHOD_NAME);
             return;
         }
 
         if(!isFunction(errorCallback)) {
-            logError(METHOD_NAME, 'errorCallback parameter must be a function');
+            logError('errorCallback parameter must be a function', METHOD_NAME);
             return;
         }
     
@@ -393,19 +395,18 @@ cordova.define('me.habel.MyEstimotePlugin.EstimoteBeacons', function(require, ex
         var METHOD_NAME = 'setPowerOfConnectedBeacon';
 
         if(!errorCallback) {
-            errorCallback = function() {};
+            errorCallback = EMPTY_FUNCTION;
         }
-
         if(!isInt(power)) {
-            logError(METHOD_NAME, 'power parameter must be a valid integer');
+            logError('power parameter must be a valid integer', METHOD_NAME);
             return;
         }
         if(!isFunction(successCallback)) {
-            logError(METHOD_NAME, 'successCallback parameter must be a function');
+            logError('successCallback parameter must be a function', METHOD_NAME);
             return;
         }
         if(!isFunction(errorCallback)) {
-            logError(METHOD_NAME, 'errorCallback parameter must be a function');
+            logError('errorCallback parameter must be a function', METHOD_NAME);
             return;
         }
 
@@ -422,15 +423,14 @@ cordova.define('me.habel.MyEstimotePlugin.EstimoteBeacons', function(require, ex
         var METHOD_NAME = 'updateFirmwareOfConnectedBeacon';
 
         if(!errorCallback) {
-            errorCallback = function() {};
+            errorCallback = EMPTY_FUNCTION;
         }
-
         if(!isFunction(successCallback)) {
-            logError(METHOD_NAME, 'successCallback parameter must be a function');
+            logError('successCallback parameter must be a function', METHOD_NAME);
             return;
         }
         if(!isFunction(errorCallback)) {
-            logError(METHOD_NAME, 'errorCallback parameter must be a function');
+            logError('errorCallback parameter must be a function', METHOD_NAME);
             return;
         }
     
@@ -459,7 +459,7 @@ cordova.define('me.habel.MyEstimotePlugin.EstimoteBeacons', function(require, ex
                 exec(
                     progressCallback,
                     function(error) {
-                        logError('getFirmwareUpdateProgress', error);
+                        logError(error, 'getFirmwareUpdateProgress');
                     },
                     CLASS_NAME,
                     'getFirmwareUpdateProgress',
@@ -473,13 +473,13 @@ cordova.define('me.habel.MyEstimotePlugin.EstimoteBeacons', function(require, ex
         var METHOD_NAME = 'getBeacons';
 
         if(!isFunction(successCallback)) {
-            logError(METHOD_NAME, 'successCallback parameter must be a function');
+            logError('successCallback parameter must be a function', METHOD_NAME);
             return;
         }
 
         exec(
             successCallback,
-            function() {},
+            EMPTY_FUNCTION,
             CLASS_NAME,
             METHOD_NAME,
             []
@@ -490,25 +490,25 @@ cordova.define('me.habel.MyEstimotePlugin.EstimoteBeacons', function(require, ex
         var METHOD_NAME = 'startVirtualBeacon';
 
         if(!isInt(major)) {
-            logError(METHOD_NAME, 'major parameter must be a valid integer');
+            logError('major parameter must be a valid integer', METHOD_NAME);
             return;
         }
         if(!isInt(minor)) {
-            logError(METHOD_NAME, 'minor parameter must be a valid integer');
+            logError('minor parameter must be a valid integer', METHOD_NAME);
             return;
         }
         if(!isString(id)) {
-            logError(METHOD_NAME, 'id parameter must be a string');
+            logError('id parameter must be a string', METHOD_NAME);
             return;
         }
         if(!isFunction(successCallback)) {
-            logError(METHOD_NAME, 'successCallback parameter must be a function');
+            logError('successCallback parameter must be a function', METHOD_NAME);
             return;
         }
 
         exec(
             successCallback,
-            function() {},
+            EMPTY_FUNCTION,
             CLASS_NAME,
             METHOD_NAME,
             [major, minor, id]
@@ -519,13 +519,13 @@ cordova.define('me.habel.MyEstimotePlugin.EstimoteBeacons', function(require, ex
         var METHOD_NAME = 'stopVirtualBeacon';
 
         if(!isFunction(successCallback)) {
-            logError(METHOD_NAME, 'successCallback parameter must be a function');
+            logError('successCallback parameter must be a function', METHOD_NAME);
             return;
         }
     
         exec(
             successCallback,
-            function() {},
+            EMPTY_FUNCTION,
             CLASS_NAME,
             METHOD_NAME,
             []

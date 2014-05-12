@@ -2,16 +2,16 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
         version="0.1"
-        id="me.habel.MyEstimotePlugin">
+        id="ux.mx.phonegap">
 
     <engines>
         <engine name="cordova" version=">=3.0.0"/>
     </engines>
 
-    <name>EstimoteBeaconsPhoneGapPluginForAndroidn</name>
-    <description>Estimote iBeacons PhoneGap Plugin for Android. This is a PhoneGap 3.x plugin for Android which allows interaction with Estimote iBeacons. This plugin is just a wrapper around Estimote Android SDK.</description>
-    <author>Hugo Habel</author>
-    <keywords>iBeacons</keywords>
+    <name>Estimote iBeacons PhoneGap/Cordova Plugin for Android</name>
+    <description>Estimote iBeacons PhoneGap/Cordova Plugin for Android. This is a PhoneGap/Cordova 3.x plugin for Android which allows interaction with Estimote iBeacons. This plugin is just a wrapper around Estimote Android SDK.</description>
+    <author>MDC UX Team</author>
+    <keywords>iBeacon, Android, Cordova, PhoneGap</keywords>
     <license>MIT</license>
 
     <js-module src="www/EstimoteBeacons.js" name="EstimoteBeacons">
@@ -25,7 +25,7 @@
             </feature>
         </config-file>
 
-        <source-file src="src/android/EstimoteBeacons.java" target-dir="src/me/habel/MyEstimotePlugin"/>
+        <source-file src="src/android/EstimoteBeacons.java" target-dir="src/ux/mx/phonegap"/>
         <source-file src="src/android/estimote-sdk-preview.jar" target-dir="libs" framework="true"/>
 
         <config-file target="AndroidManifest.xml" parent="/manifest">

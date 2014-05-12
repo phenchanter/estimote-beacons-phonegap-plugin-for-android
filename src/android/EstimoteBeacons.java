@@ -1,4 +1,4 @@
-package me.habel.MyEstimotePlugin;
+package ux.mx.phonegap;
 
 import android.os.RemoteException;
 import android.util.Log;
