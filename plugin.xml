@@ -20,8 +20,8 @@
 
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="PlotCordovaPlugin">
-                <param name="android-package" value="com.plotprojects.cordova.PlotCordovaPlugin"/>
+            <feature name="estimoteBeacons">
+                <param name="android-package" value="ux.mx.phonegap.EstimoteBeacons"/>
             </feature>
         </config-file>
 
