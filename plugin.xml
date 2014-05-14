@@ -20,7 +20,7 @@
 
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="estimoteBeacons">
+            <feature name="EstimoteBeacons">
                 <param name="android-package" value="ux.mx.phonegap.EstimoteBeacons"/>
             </feature>
         </config-file>
