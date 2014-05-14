@@ -137,6 +137,7 @@ cordova.define('ux.mx.phonegap.EstimoteBeacons', function(require, exports, modu
         );
     };
 
+/*
     EstimoteBeacons.prototype.startMonitoringForRegion = function(id, majorOrCallback, minorOrCallback, successCallback, errorCallback) {
         var METHOD_NAME = 'startMonitoringForRegion';
 
@@ -177,7 +178,9 @@ cordova.define('ux.mx.phonegap.EstimoteBeacons', function(require, exports, modu
             [id, major, minor]
         );
     };
+*/
 
+/*
     EstimoteBeacons.prototype.stopMonitoringForRegion = function(id, successCallback, errorCallback) {
         var METHOD_NAME = 'stopMonitoringForRegion';
 
@@ -205,7 +208,9 @@ cordova.define('ux.mx.phonegap.EstimoteBeacons', function(require, exports, modu
             [id]
         );
     };
+*/
 
+/*
     EstimoteBeacons.prototype.getBeaconByIdx = function(idx, successCallback, errorCallback) {
         var METHOD_NAME = 'getBeaconByIdx';
 
@@ -233,7 +238,9 @@ cordova.define('ux.mx.phonegap.EstimoteBeacons', function(require, exports, modu
             [idx]
         );
     };
+*/
 
+/*
     EstimoteBeacons.prototype.getClosestBeacon = function(successCallback, errorCallback) {
         var METHOD_NAME = 'getClosestBeacon';
 
@@ -257,7 +264,9 @@ cordova.define('ux.mx.phonegap.EstimoteBeacons', function(require, exports, modu
             []
         );
     };
+*/
 
+/*
     EstimoteBeacons.prototype.getConnectedBeacon = function(successCallback, errorCallback) {
         var METHOD_NAME = 'getConnectedBeacon';
 
@@ -281,7 +290,9 @@ cordova.define('ux.mx.phonegap.EstimoteBeacons', function(require, exports, modu
             []
         );
     };
+*/
 
+/*
     EstimoteBeacons.prototype.connectToBeacon = function(major, minor, successCallback, errorCallback) {
         var METHOD_NAME = 'connectToBeacon';
 
@@ -313,7 +324,9 @@ cordova.define('ux.mx.phonegap.EstimoteBeacons', function(require, exports, modu
             [major, minor]
         );
     };
+*/
 
+/*
     EstimoteBeacons.prototype.connectToBeaconByMacAddress = function(macAddress, successCallback, errorCallback) {
         var METHOD_NAME = 'connectToBeaconByMacAddress';
 
@@ -337,7 +350,9 @@ cordova.define('ux.mx.phonegap.EstimoteBeacons', function(require, exports, modu
             [macAddress]
         );
     };
+*/    
 
+/*
     EstimoteBeacons.prototype.disconnectFromBeacon = function(successCallback, errorCallback) {
         var METHOD_NAME = 'disconnectFromBeacon';
 
@@ -361,7 +376,9 @@ cordova.define('ux.mx.phonegap.EstimoteBeacons', function(require, exports, modu
             []
         );
     };
+*/
 
+/*
     EstimoteBeacons.prototype.setFrequencyOfConnectedBeacon = function(frequency, successCallback, errorCallback) {
         var METHOD_NAME= 'setFrequencyOfConnectedBeacon';
 
@@ -390,7 +407,9 @@ cordova.define('ux.mx.phonegap.EstimoteBeacons', function(require, exports, modu
             [frequency]
         );
     };
+*/
 
+/*
     EstimoteBeacons.prototype.setPowerOfConnectedBeacon = function(power, successCallback, errorCallback) {
         var METHOD_NAME = 'setPowerOfConnectedBeacon';
 
@@ -418,7 +437,9 @@ cordova.define('ux.mx.phonegap.EstimoteBeacons', function(require, exports, modu
             [power]
         );
     };
+*/    
 
+/*
     EstimoteBeacons.prototype.updateFirmwareOfConnectedBeacon = function(progressCallback, successCallback, errorCallback) {
         var METHOD_NAME = 'updateFirmwareOfConnectedBeacon';
 
@@ -468,6 +489,7 @@ cordova.define('ux.mx.phonegap.EstimoteBeacons', function(require, exports, modu
             }, 100);
         }
     };
+*/
 
     EstimoteBeacons.prototype.getBeacons = function(successCallback) {
         var METHOD_NAME = 'getBeacons';
@@ -486,6 +508,7 @@ cordova.define('ux.mx.phonegap.EstimoteBeacons', function(require, exports, modu
         );
     };
 
+/*
     EstimoteBeacons.prototype.startVirtualBeacon = function(major, minor, id, successCallback) {
         var METHOD_NAME = 'startVirtualBeacon';
 
@@ -514,7 +537,9 @@ cordova.define('ux.mx.phonegap.EstimoteBeacons', function(require, exports, modu
             [major, minor, id]
         );
     };
+*/
 
+/*
     EstimoteBeacons.prototype.stopVirtualBeacon = function(successCallback) {
         var METHOD_NAME = 'stopVirtualBeacon';
 
@@ -531,6 +556,7 @@ cordova.define('ux.mx.phonegap.EstimoteBeacons', function(require, exports, modu
             []
         );
     };
+*/
 
     var estimoteBeacons = new EstimoteBeacons();
     module.exports = estimoteBeacons;
