@@ -15,7 +15,7 @@ This plugin allows for:
 - [Adobe PhoneGap 3.x](http://phonegap.com/install/) or [Apache Cordova 3.x](http://cordova.apache.org/#download).
 - [Eclipse](https://www.eclipse.org/downloads/) or [Android Studio](http://developer.android.com/sdk/installing/studio.html) IDE.
 - [Android SDK](http://developer.android.com/sdk).
-- Mobile device with Android 4.3 or above and Bluetooth 4.0 or above (a.k.a. [Bluetooth Low Energy](http://en.wikipedia.org/wiki/Bluetooth_low_energy) or BLE).
+- Device with Android 4.3 or above and Bluetooth 4.0 or above (a.k.a. [Bluetooth Low Energy](http://en.wikipedia.org/wiki/Bluetooth_low_energy) or BLE).
 
 ## Installation
 
@@ -144,7 +144,7 @@ var app = {
   Take a look at [estimote-beacons-phonegap-sample-app](https://github.com/mdc-ux-team/estimote-beacons-phonegap-sample-app).
 -->
 
-1. For which Android mobile devices could I develop an hybrid app using this plugin?
+1. For which Android devices could I develop a hybrid app using this plugin?
 
   These could be some of them:
   - [Samsung Galaxy S3](http://www.samsung.com/global/galaxys3/)
@@ -159,7 +159,7 @@ var app = {
 
 1. Is there an app to check if my Android mobile device supports BLE?
 
-  [BLE Checker](https://play.google.com/store/apps/details?id=com.magicalboy.btd). We have tested this app in a couple of Android mobile devices and it seems to work fine.
+  [BLE Checker](https://play.google.com/store/apps/details?id=com.magicalboy.btd). We have tested this app in a couple of Android devices and it seems to work fine.
 
 1. Is there an Estimote iBeacons PhoneGap/Cordova Plugin for iOS?
 
