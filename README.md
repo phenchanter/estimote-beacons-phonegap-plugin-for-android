@@ -124,15 +124,15 @@ var app = {
 1. For which Android devices could I develop a hybrid app using this plugin?
 
   These could be some of them:
-  - [Samsung Galaxy S3](http://www.samsung.com/global/galaxys3/)
-  - [Samsung Galaxy S4](http://www.samsung.com/global/microsite/galaxys4/)
-  - [Samsung Galaxy S4 Mini](http://www.samsung.com/global/microsite/galaxys4/)
-  - [Samsung Galaxy S5](http://www.samsung.com/global/microsite/galaxys5/)
-  - [Samsung Galaxy Note 2](http://www.samsung.com/galaxynote2/)
+  - [Samsung Galaxy S3](http://www.samsung.com/global/galaxys3)
+  - [Samsung Galaxy S4](http://www.samsung.com/global/microsite/galaxys4)
+  - [Samsung Galaxy S4 Mini](http://www.samsung.com/global/microsite/galaxys4)
+  - [Samsung Galaxy S5](http://www.samsung.com/global/microsite/galaxys5)
+  - [Samsung Galaxy Note 2](http://www.samsung.com/galaxynote2)
   - [Samsung Galaxy Note 3](http://www.samsung.com/us/guide-to-galaxy-smart-devices/galaxy-note-3.html)
-  - [Google Nexus 4](http://www.google.com/intl/all/nexus/4/)
-  - [Google Nexus 5](http://www.google.com/nexus/5/)
-  - [Google Nexus 7](http://www.google.com/nexus/7/)
+  - [Google Nexus 4](http://www.google.com/intl/all/nexus/4)
+  - [Google Nexus 5](http://www.google.com/nexus/5)
+  - [Google Nexus 7](http://www.google.com/nexus/7)
 
 1. Is there an app to check if my Android device supports BLE?
 
@@ -142,10 +142,15 @@ var app = {
 
   Yes. Take a look at the [kdzwinel/phonegap-estimotebeacons](https://github.com/kdzwinel/phonegap-estimotebeacons) project being developed by [Konrad Dzwinel](https://github.com/kdzwinel).
 
+## Changelog
+
+### 0.0.1
+- First Implementation.
+
 ## References
 
-- [PhoneGap Documentation](http://docs.phonegap.com/).
-- [Apache Cordova Documentation](http://cordova.apache.org/docs/en/3.4.0/).
+- [Adobe PhoneGap Documentation](http://docs.phonegap.com).
+- [Apache Cordova Documentation](http://cordova.apache.org/docs/en/3.4.0).
 
 ## License
 
