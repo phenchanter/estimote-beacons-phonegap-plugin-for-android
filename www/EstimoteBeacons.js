@@ -26,30 +26,12 @@ cordova.define('ux.mx.phonegap.EstimoteBeacons', function(require, exports, modu
     }
 
     /**
-     * Returns true if passed Object is an integer, otherwise false.
-     * @param {Object} o Object to be verified
-     * @return {boolean} True if passed Object is an integer, otherwise false
-     */
-    function isInt(o) {
-        return (!isNaN(parseInt(o, 10)) && (parseFloat(o) == parseInt(o, 10)));
-    }
-
-    /**
      * Returns true if passed Object is equal to null or is empty, otherwise false.
      * @param {Object} o Object to be verified
      * @returns {boolean} True if passed Object is equal to null or is empty, otherwise false
      */
     function isNullOrEmpty(o) {
         return (!o || o.length === 0);
-    }
-
-    /**
-     * Returns true if passed Object is a String, otherwise false.
-     * @param {Object} o Object to be verified
-     * @return {boolean} True if passed Object is a String, otherwise false
-     */
-    function isString(o) {
-        return (typeof o === 'string');
     }
 
     /**
