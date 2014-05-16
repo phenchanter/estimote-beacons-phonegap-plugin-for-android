@@ -135,6 +135,13 @@ document.addEventListener('DOMContentLoaded', onDocumentDomContentLoaded);
 1. Is there an Estimote iBeacons Cordova/PhoneGap plugin for iOS?
 
   Yes. Take a look at the [kdzwinel/phonegap-estimotebeacons](https://github.com/kdzwinel/phonegap-estimotebeacons) project being developed by [Konrad Dzwinel](https://github.com/kdzwinel).
+  
+1. How can I edit the value of the major/minor property of a beacon?
+  1. Install [Estimote app](https://play.google.com/store/apps/details?id=com.estimote.apps.main).
+  2. Click _Beacons_.
+  3. Click any of the beacons within the radar.
+  4. Click _Major_.
+  5. Enter the new value for _Major_ and click _Save Major_.
 
 ## Changelog
 
