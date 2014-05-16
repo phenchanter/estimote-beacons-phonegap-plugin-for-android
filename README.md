@@ -39,52 +39,46 @@ $ phonegap local plugin add https://github.com/mdc-ux-team/estimote-beacons-phon
 In your `www/js/index.js` file:
 
 ```
-...
-var myInterval = null;
-...
-var app = {
-  ...
-  bindEvents: function() {
-    document.addEventListener('deviceready', this.onDeviceReady, false);
-    document.addEventListener('pause', this.onPause, false);
-    document.addEventListener('resume', this.onResume, false);
-  },
-  ...
-  onDeviceReady: function() {
-    app.receivedEvent('deviceready');
-    window.EstimoteBeacons.startRangingBeaconsInRegion(function() {
-      // Every now and then get the list of beacons in range
-      myInterval = setInterval(function() {
-        window.EstimoteBeacons.getBeacons(function(data) {
-            // data contains the following information: proximityUUID, major, minor, rssi, macAddress, measuredPower
-            ...
-        });
-      }, 3000);
+var myInterval;
+
+function startRangingBeaconsInRegionCallback() {
+  console.log('Start ranging...');
+  
+  // Every now and then get the list of beacons in range
+  myInterval = setInterval(function() {
+    EstimoteBeacons.getBeacons(function(data) {
+      // data contains the following information: proximityUUID, major, minor, rssi, macAddress, measuredPower
+      console.log('Getting beacons...');
+      ...
     });
-  },
-  ...
-  onPause: function() {
-    app.receivedEvent('pause');
-    window.EstimoteBeacons.stopRangingBeaconsInRegion(function() {
-        console.log("DEBUG :: Stop ranging");
-    });
-    clearInterval(myInterval);
-  },
-  ...
-  onResume: function() {
-    app.receivedEvent('resume');
-    window.EstimoteBeacons.startRangingBeaconsInRegion(function() {
-      // Every now and then get the list of beacons in range
-      myInterval = setInterval(function() {
-        window.EstimoteBeacons.getBeacons(function(data) {
-          // data contains the following information: proximityUUID, major, minor, rssi, macAddress, measuredPower
-          ...
-        });
-      }, 3000);
-    });
-  },
-  ...
-};
+  }, 3000);
+}
+
+function onDeviceReady() {
+  document.removeEventListener('devicerady', onDeviceReady);
+  
+  EstimoteBeacons.startRangingBeaconsInRegion(startRangingBeaconsInRegionCallback);
+}
+
+function onPause() {
+  EstimoteBeacons.stopRangingBeaconsInRegion(function() {
+    console.log('Stop ranging...');
+  });
+  clearInterval(myInterval);
+}
+
+function onResume() {
+  EstimoteBeacons.startRangingBeaconsInRegion(startRangingBeaconsInRegionCallback);
+}
+
+function onDocumentDomContentLoaded() {
+  document.removeEventListener('DOMContentLoaded', onDocumentDomContentLoaded);
+
+  document.addEventListener('deviceready', onDeviceReady);
+  document.addEventListener('pause', onPause);
+  document.addEventListener('resume', onResume);
+}
+document.addEventListener('DOMContentLoaded', onDocumentDomContentLoaded);
 ```
 
 ## Available Methods
