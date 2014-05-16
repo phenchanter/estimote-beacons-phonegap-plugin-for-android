@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        version="0.1"
-        id="ux.mx.phonegap">
+        id="ux.mx.phonegap"
+        version="0.0.1">
 
     <engines>
         <engine name="cordova" version=">=3.0.0"/>
     </engines>
 
-    <name>Estimote iBeacons PhoneGap/Cordova Plugin for Android</name>
-    <description>Estimote iBeacons PhoneGap/Cordova Plugin for Android. This is a PhoneGap/Cordova 3.x plugin for Android which allows interaction with Estimote iBeacons. This plugin is just a wrapper around Estimote Android SDK.</description>
+    <name>Estimote iBeacons Cordova/PhoneGap Plugin for Android</name>
+    <description>This is a Cordova/PhoneGap 3.x plugin for Android which allows interaction with Estimote iBeacons. This plugin is just a wrapper around Estimote Android SDK.</description>
     <author>MDC UX Team</author>
-    <keywords>iBeacon, Android, Cordova, PhoneGap</keywords>
+    <keywords>ibeacon, beacon, android, cordova, phoneGap</keywords>
     <license>MIT</license>
 
     <js-module src="www/EstimoteBeacons.js" name="EstimoteBeacons">
