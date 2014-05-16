@@ -144,8 +144,13 @@ var app = {
 
 ## Changelog
 
+## 0.0.2
+- Added JavaDoc and JSDoc comments.
+- Improved Java and JavaScript code.
+- Updated plugin id and Java namespace.
+
 ### 0.0.1
-- First Implementation.
+- First implementation.
 
 ## References
 

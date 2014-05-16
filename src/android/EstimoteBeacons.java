@@ -1,5 +1,4 @@
-
-package ux.mx.phonegap;
+package com.oracle.mx.ux.cordova.estimotebeacons;
 
 import android.os.RemoteException;
 import android.util.Log;
@@ -33,54 +32,64 @@ public class EstimoteBeacons extends CordovaPlugin {
     private static final String REGION_ID = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
 
     // Variables
-    private BeaconManager iBeaconManager;
+    private BeaconManager beaconManager;
     private Region currentRegion;
     private List<Beacon> beacons = new ArrayList<Beacon>();
     private int inRegion = 0;
 
+    /**
+     * Initializes the plugin.
+     * @param cordova The context of the main Activity
+     * @param webView The CordovaWebView Cordova is running in
+     */
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
 
-        iBeaconManager = new BeaconManager(this.cordova.getActivity().getApplicationContext());
+        beaconManager = new BeaconManager(this.cordova.getActivity().getApplicationContext());
         currentRegion = new Region("regionId", REGION_ID, null, null);
     }
 
+    /**
+     * Executes the request and returns PluginResult.
+     * @param action The action to execute
+     * @param args JSONArray of arguments for the plugin.
+     * @param callbackContext The callback id used when calling back into JavaScript
+     * @return True if the action was valid, otherwise false
+     */
     @Override
-    public boolean execute(String action, JSONArray args, CallbackContext callbackContext)
-            throws JSONException {
+    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         Log.d(EstimoteBeacons.class.toString(), "action -> " + action);
 
         try {
-            if (action.equalsIgnoreCase(START_MONITORING_BEACONS_IN_REGION)) {
-                startMonitoringForRegion(callbackContext);
+            if(action.equalsIgnoreCase(START_MONITORING_BEACONS_IN_REGION)) {
+                startMonitoringBeaconsInRegion(callbackContext);
                 return true;
             }
 
-            if (action.equalsIgnoreCase(STOP_MONITORING_BEACONS_IN_REGION)) {
-                stopMonitoringForRegion();
+            if(action.equalsIgnoreCase(STOP_MONITORING_BEACONS_IN_REGION)) {
+                stopMonitoringBeaconsInRegion();
                 callbackContext.success(callbackContext.getCallbackId());
                 return true;
             }
 
-            if (action.equalsIgnoreCase(START_RANGING_BEACONS_IN_REGION)) {
+            if(action.equalsIgnoreCase(START_RANGING_BEACONS_IN_REGION)) {
                 startRangingBeaconsInRegion();
                 callbackContext.success(callbackContext.getCallbackId());
                 return true;
             }
 
-            if (action.equalsIgnoreCase(STOP_RANGING_BEACONS_IN_REGION)) {
+            if(action.equalsIgnoreCase(STOP_RANGING_BEACONS_IN_REGION)) {
                 stopRangingBeaconsInRegion();
                 callbackContext.success(callbackContext.getCallbackId());
                 return true;
             }
 
-            if (action.equalsIgnoreCase(GET_BEACONS)) {
-                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK,
-                        listToJSONArray(beacons)));
+            if(action.equalsIgnoreCase(GET_BEACONS)) {
+                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, listToJSONArray(beacons)));
                 return true;
             }
-        } catch (Exception e) {
+        } catch(Exception e) {
             System.out.println(e.getMessage());
             callbackContext.error(e.getMessage());
             return false;
@@ -88,42 +97,52 @@ public class EstimoteBeacons extends CordovaPlugin {
         return false;
     }
 
+    /**
+     * Starts ranging beacons in region.
+     * @throws RemoteException
+     */
     private void startRangingBeaconsInRegion() throws RemoteException {
-        iBeaconManager.setRangingListener(new BeaconManager.RangingListener() {
+        beaconManager.setRangingListener(new BeaconManager.RangingListener() {
             @Override
             public void onBeaconsDiscovered(Region region, List<Beacon> beacons) {
-                if (beacons == null || beacons.size() < 1) {
+                if(beacons == null || beacons.isEmpty()) {
                     Log.d("DEBUG", "No beacons");
                 } else {
                     EstimoteBeacons.this.beacons = beacons;
                 }
             }
         });
-        iBeaconManager.connect(new BeaconManager.ServiceReadyCallback() {
+        beaconManager.connect(new BeaconManager.ServiceReadyCallback() {
             @Override
             public void onServiceReady() {
                 try {
-                    iBeaconManager.startRanging(currentRegion);
-                } catch (RemoteException e) {
+                    beaconManager.startRanging(currentRegion);
+                } catch(RemoteException e) {
                     Log.e("DEBUG", "Cannot start ranging", e);
                 }
             }
         });
     }
 
+    /**
+     * Stops ranging beacons in region.
+     * @throws RemoteException
+     */
     private void stopRangingBeaconsInRegion() throws RemoteException {
-        iBeaconManager.stopRanging(currentRegion);
+        beaconManager.stopRanging(currentRegion);
     }
 
-    private void startMonitoringForRegion(final CallbackContext callbackContext)
-            throws RemoteException {
-        iBeaconManager.setMonitoringListener(new BeaconManager.MonitoringListener() {
-
+    /**
+     * Starts monitoring beacons in region.
+     * @param callbackContext The callback id used when calling back into JavaScript
+     * @throws RemoteException
+     */
+    private void startMonitoringBeaconsInRegion(final CallbackContext callbackContext) throws RemoteException {
+        beaconManager.setMonitoringListener(new BeaconManager.MonitoringListener() {
             @Override
             public void onExitedRegion(Region region) {
                 EstimoteBeacons.this.inRegion = 0;
-                PluginResult pluginResult = new PluginResult(PluginResult.Status.OK,
-                        EstimoteBeacons.this.inRegion);
+                PluginResult pluginResult = new PluginResult(PluginResult.Status.OK, EstimoteBeacons.this.inRegion);
                 pluginResult.setKeepCallback(true);
                 callbackContext.sendPluginResult(pluginResult);
             }
@@ -131,59 +150,59 @@ public class EstimoteBeacons extends CordovaPlugin {
             @Override
             public void onEnteredRegion(Region region, List<Beacon> beacons) {
                 EstimoteBeacons.this.inRegion = 1;
-                PluginResult pluginResult = new PluginResult(PluginResult.Status.OK,
-                        EstimoteBeacons.this.inRegion);
+                PluginResult pluginResult = new PluginResult(PluginResult.Status.OK, EstimoteBeacons.this.inRegion);
                 pluginResult.setKeepCallback(true);
                 callbackContext.sendPluginResult(pluginResult);
             }
-
         });
-        iBeaconManager.connect(new BeaconManager.ServiceReadyCallback() {
+        beaconManager.connect(new BeaconManager.ServiceReadyCallback() {
             @Override
             public void onServiceReady() {
                 try {
-                    iBeaconManager.startMonitoring(currentRegion);
-                } catch (RemoteException e) {
+                    beaconManager.startMonitoring(currentRegion);
+                } catch(RemoteException e) {
                     Log.e("DEBUG", "Cannot start monitoring", e);
                 }
             }
         });
     }
 
-    private void stopMonitoringForRegion() throws RemoteException {
-        iBeaconManager.stopMonitoring(currentRegion);
+    /**
+     * Stops monitoring beacons in region.
+     * @throws RemoteException
+     */
+    private void stopMonitoringBeaconsInRegion() throws RemoteException {
+        beaconManager.stopMonitoring(currentRegion);
     }
 
     /**
-     * Convert list of beacons(@com.estimote.sdk.Beacon) to @JSONArray.
-     *
+     * Converts passed list of beacons(@com.estimote.sdk.Beacon) to @JSONArray.
      * @param beacons List of beacons(@com.estimote.sdk.Beacon)
      * @return JSONArray
      * @throws JSONException
      */
     private JSONArray listToJSONArray(List<Beacon> beacons) throws JSONException {
-        JSONArray jArray = new JSONArray();
-        for (Beacon beacon : beacons) {
-            jArray.put(beaconToJSONObject(beacon));
+        JSONArray jsonArray = new JSONArray();
+        for(Beacon beacon : beacons) {
+            jsonArray.put(beaconToJSONObject(beacon));
         }
-        return jArray;
+        return jsonArray;
     }
 
     /**
-     * Convert beacon(@com.estimote.sdk.Beacon) to @JSONObject.
-     *
+     * Converts passed beacon(@com.estimote.sdk.Beacon) to @JSONObject.
      * @param beacon beacon(@com.estimote.sdk.Beacon)
      * @return JSONObject
      * @throws JSONException
      */
     private JSONObject beaconToJSONObject(Beacon beacon) throws JSONException {
-        JSONObject object = new JSONObject();
-        object.put("proximityUUID", beacon.getProximityUUID());
-        object.put("major", beacon.getMajor());
-        object.put("minor", beacon.getMinor());
-        object.put("rssi", beacon.getRssi());
-        object.put("macAddress", beacon.getMacAddress());
-        object.put("measuredPower", beacon.getMeasuredPower());
-        return object;
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("proximityUUID", beacon.getProximityUUID());
+        jsonObject.put("major", beacon.getMajor());
+        jsonObject.put("minor", beacon.getMinor());
+        jsonObject.put("rssi", beacon.getRssi());
+        jsonObject.put("macAddress", beacon.getMacAddress());
+        jsonObject.put("measuredPower", beacon.getMeasuredPower());
+        return jsonObject;
     }
 }
