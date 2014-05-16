@@ -61,12 +61,12 @@ var app = {
             ...
         });
       }, 3000);
-    });  
+    });
   },
   ...
   onPause: function() {
     app.receivedEvent('pause');
-    window.EstimoteBeacons.stopEstimoteBeaconsDiscoveryForRegion(function() {
+    window.EstimoteBeacons.stopRangingBeaconsInRegion(function() {
         console.log("DEBUG :: Stop ranging");
     });
     clearInterval(myInterval);
@@ -92,29 +92,51 @@ var app = {
 
 ### startRangingBeaconsInRegion
 
-`EstimoteBeacons.startRangingBeaconsInRegion(successCallback)` Starts looking for beacons.
+`EstimoteBeacons.startRangingBeaconsInRegion(successCallback)` Starts ranging for beacons.
 
 ### stopRangingBeaconsInRegion
 
-`EstimoteBeacons.stopRangingBeaconsInRegion(successCallback)` Stops looking for beacons.
+`EstimoteBeacons.stopRangingBeaconsInRegion(successCallback)` Stops ranging for beacons.
 
-### startEstimoteBeaconsDiscoveryForRegion
+### startMonitoringBeaconsInRegion
 
-`EstimoteBeacons.startEstimoteBeaconsDiscoveryForRegion(successCallback)` Starts discoverying beacons.
+`EstimoteBeacons.startMonitoringBeaconsInRegion(successCallback)` Starts monitoring region.
 
-### stopEstimoteBeaconsDiscoveryForRegion
+### stopMonitoringBeaconsInRegion
 
-`EstimoteBeacons.stopEstimoteBeaconsDiscoveryForRegion(successCallback)` Stops discoverying beacons.
+`EstimoteBeacons.stopMonitoringBeaconsInRegion(successCallback)` Stops monitoring region.
 
 ### getBeacons
 
-`EstimoteBeacons.getBeacons(successCallback)` Returns latest list of beacons found by `startRangingBeaconsInRegion` or `startEstimoteBeaconsDiscoveryForRegion`. You have to call this method periodically to be up to date with latest results.
+`EstimoteBeacons.getBeacons(successCallback)` Returns latest list of beacons found by `startRangingBeaconsInRegion`. You have to call this method periodically to be up to date with latest results.
 
 ## Known Issues
 
 - Sometimes this plugin stops working because of an error: "Bluetooth Share has stopped". This is an [Android bug](https://code.google.com/p/android/issues/detail?id=67272). For more information about this bug read [bullet 2 within the FAQ section](https://github.com/Estimote/Android-SDK#faq) of [Estimote Android SDK](https://github.com/Estimote/Android-SDK). When this error appears, it may be necessary to factory reset your device. **NOTE: BACKUP YOUR DATA AND APPS BEFORE FACTORY RESET YOUR DEVICE**.
 
 ## FAQ
+
+1. How to create a PhoneGap/Cordova project/app for Android?
+
+  Using PhoneGap:
+
+  ```
+  $ phonegap create myphonegapapp com.mycompany.myphonegapapp MyPhoneGapApp
+  $ cd myphonegapapp
+  $ phonegap build android
+  ```
+
+  Read [The Command-Line Interface](http://docs.phonegap.com/en/3.0.0/guide_cli_index.md.html) within [PhoneGap Documentation](http://docs.phonegap.com/) for more information.
+
+  Using Cordova:
+
+  ```
+  $ cordova create mycordovaapp com.mycompany.mycordovaapp MyCordovaApp
+  $ cd mycordovaapp
+  $ cordova platform add android
+  ```
+
+  Read [The Command-Line Interface](http://cordova.apache.org/docs/en/3.4.0/guide_cli_index.md.html#The%20Command-Line%20Interface) within [Apache Cordova Documentation](http://cordova.apache.org/docs/en/3.4.0/) for more information.
 
 <!--
 1. Where can I find a sample app which uses this plugin?
@@ -135,18 +157,13 @@ var app = {
   - [Google Nexus 5](http://www.google.com/nexus/5/)
   - [Google Nexus 7](http://www.google.com/nexus/7/)
 
-1. Is there an app to check if my Android device supports BLE?
+1. Is there an app to check if my Android mobile device supports BLE?
 
   [BLE Checker](https://play.google.com/store/apps/details?id=com.magicalboy.btd). We have tested this app in a couple of Android devices and it seems to work fine.
 
 1. Is there an Estimote iBeacons PhoneGap/Cordova Plugin for iOS?
 
-  Yes. Take a look at the [phonegap-estimotebeacons](https://github.com/kdzwinel/phonegap-estimotebeacons) project being developed by [Konrad Dzwinel](https://github.com/kdzwinel). 
-
-## References
-
-- [PhoneGap Documentation](http://docs.phonegap.com/).
-- [Apache Cordova Documentation](http://cordova.apache.org/docs/en/3.4.0/).
+  Yes. Take a look at the [phonegap-estimotebeacons](https://github.com/kdzwinel/phonegap-estimotebeacons) project being developed by [Konrad Dzwinel](https://github.com/kdzwinel).
 
 ## License
 
