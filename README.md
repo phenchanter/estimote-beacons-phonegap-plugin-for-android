@@ -144,7 +144,7 @@ var app = {
 
 ## Changelog
 
-## 0.0.2
+### 0.0.2
 - Added JavaDoc and JSDoc comments.
 - Improved Java and JavaScript code.
 - Updated plugin id and Java namespace.
