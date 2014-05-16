@@ -4,7 +4,7 @@
 
 ## Overview
 
-This is a [Cordova 3.x](http://cordova.apache.org)/[PhoneGap 3.x](http://phonegap.com) plugin for Android which allows interaction with [Estimote iBeacons](http://estimote.com). This plugin is just a wrapper around [Estimote Android SDK](https://github.com/Estimote/Android-SDK).
+This is a [Cordova](http://cordova.apache.org)/[PhoneGap](http://phonegap.com) 3.x plugin for Android which allows interaction with [Estimote iBeacons](http://estimote.com). This plugin is just a wrapper around [Estimote Android SDK](https://github.com/Estimote/Android-SDK).
 
 This plugin allows for:
 - beacon ranging: Scan beacons and optionally filter them by their values.
@@ -13,7 +13,7 @@ This plugin allows for:
 
 ## Requirements
 
-- [Adobe PhoneGap 3.x](http://phonegap.com/install) or [Apache Cordova 3.x](http://cordova.apache.org/#download).
+- [Apache Cordova](http://cordova.apache.org/#download)/[Adobe PhoneGap](http://phonegap.com/install) 3.x.
 - [Eclipse](https://www.eclipse.org/downloads) or [Android Studio](http://developer.android.com/sdk/installing/studio.html) IDE.
 - [Android SDK](http://developer.android.com/sdk).
 - Device with Android 4.3 or above and Bluetooth 4.0 or above (a.k.a. [Bluetooth Low Energy](http://en.wikipedia.org/wiki/Bluetooth_low_energy) or BLE).
