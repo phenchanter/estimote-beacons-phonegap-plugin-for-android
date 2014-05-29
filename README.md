@@ -24,13 +24,13 @@ In order to add this plugin into your app:
 
 Using Cordova:
 
-```
+```sh
 $ cordova plugin add https://github.com/mdc-ux-team/estimote-beacons-phonegap-plugin-for-android.git
 ```
 
 Using PhoneGap:
 
-```
+```sh
 $ phonegap local plugin add https://github.com/mdc-ux-team/estimote-beacons-phonegap-plugin-for-android.git
 ```
 
@@ -38,7 +38,7 @@ $ phonegap local plugin add https://github.com/mdc-ux-team/estimote-beacons-phon
 
 In your `www/js/index.js` file:
 
-```
+```javascript
 var myInterval;
 
 function startRangingBeaconsInRegionCallback() {
