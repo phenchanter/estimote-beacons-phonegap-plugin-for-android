@@ -55,7 +55,10 @@ function startRangingBeaconsInRegionCallback() {
 }
 
 function onDeviceReady() {
-  document.removeEventListener('devicerady', onDeviceReady);
+  document.removeEventListener('deviceready', onDeviceReady);
+  
+  document.addEventListener('pause', onPause);
+  document.addEventListener('resume', onResume);
   
   EstimoteBeacons.startRangingBeaconsInRegion(startRangingBeaconsInRegionCallback);
 }
@@ -71,14 +74,7 @@ function onResume() {
   EstimoteBeacons.startRangingBeaconsInRegion(startRangingBeaconsInRegionCallback);
 }
 
-function onDocumentDomContentLoaded() {
-  document.removeEventListener('DOMContentLoaded', onDocumentDomContentLoaded);
-
-  document.addEventListener('deviceready', onDeviceReady);
-  document.addEventListener('pause', onPause);
-  document.addEventListener('resume', onResume);
-}
-document.addEventListener('DOMContentLoaded', onDocumentDomContentLoaded);
+document.addEventListener('devciceready', onDocumentDomContentLoaded);
 ```
 
 ## Available Methods
