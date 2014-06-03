@@ -62,6 +62,7 @@ function onDeviceReady() {
   
   EstimoteBeacons.startRangingBeaconsInRegion(startRangingBeaconsInRegionCallback);
 }
+document.addEventListener('deviceready', onDocumentDomContentLoaded);
 
 function onPause() {
   EstimoteBeacons.stopRangingBeaconsInRegion(function() {
@@ -73,8 +74,6 @@ function onPause() {
 function onResume() {
   EstimoteBeacons.startRangingBeaconsInRegion(startRangingBeaconsInRegionCallback);
 }
-
-document.addEventListener('devciceready', onDocumentDomContentLoaded);
 ```
 
 ## Available Methods
