@@ -14,13 +14,12 @@ This plugin allows for:
 ## Requirements
 
 - [Apache Cordova](http://cordova.apache.org/#download)/[Adobe PhoneGap](http://phonegap.com/install) 3.x.
-- [Eclipse](https://www.eclipse.org/downloads) or [Android Studio](http://developer.android.com/sdk/installing/studio.html) IDE.
 - [Android SDK](http://developer.android.com/sdk).
 - Device with Android 4.3 or above and Bluetooth 4.0 or above (a.k.a. [Bluetooth Low Energy](http://en.wikipedia.org/wiki/Bluetooth_low_energy) or BLE).
 
 ## Installation
 
-In order to add this plugin into your app:
+In order to add this plugin into your project:
 
 Using Cordova:
 
@@ -131,12 +130,12 @@ function onResume() {
 
   Yes. Take a look at the [kdzwinel/phonegap-estimotebeacons](https://github.com/kdzwinel/phonegap-estimotebeacons) project being developed by [Konrad Dzwinel](https://github.com/kdzwinel).
   
-1. How can I edit the value of the major/minor property of a beacon?
+1. How can I edit the value of the Major/Minor property of a beacon?
   1. Install [Estimote app](https://play.google.com/store/apps/details?id=com.estimote.apps.main).
   2. Click _Beacons_.
   3. Click any of the beacons within the radar.
-  4. Click _Major_.
-  5. Enter the new value for _Major_ and click _Save Major_.
+  4. Click _Major_/_Minor_.
+  5. Enter the new value for _Major_/_Minor_ and click _Save Major/Minor_.
 
 ## Changelog
 
