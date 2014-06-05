@@ -154,4 +154,4 @@ function onResume() {
 
 ## License
 
-MIT
+[MIT](https://github.com/mdc-ux-team/estimote-beacons-phonegap-plugin-for-android/blob/master/LICENSE-MIT)
