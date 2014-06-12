@@ -16,7 +16,7 @@
     <repo>https://github.com/mdc-ux-team/estimote-beacons-phonegap-plugin-for-android.git</repo>
 
     <js-module src="www/EstimoteBeacons.js" name="EstimoteBeacons">
-        <clobbers target="estimoteBeacons"/>
+        <clobbers target="EstimoteBeacons"/>
     </js-module>
 
     <platform name="android">
