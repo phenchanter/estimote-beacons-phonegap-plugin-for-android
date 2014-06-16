@@ -46,33 +46,44 @@ function startRangingBeaconsInRegionCallback() {
   // Every now and then get the list of beacons in range
   myInterval = setInterval(function() {
     EstimoteBeacons.getBeacons(function(data) {
-      // data contains the following information: proximityUUID, major, minor, rssi, macAddress, measuredPower
+      // data contains: proximityUUID, major, minor, rssi, macAddress and measuredPower
       console.log('Getting beacons...');
       ...
     });
   }, 3000);
 }
 
-function onDeviceReady() {
-  document.removeEventListener('deviceready', onDeviceReady);
+var app = {
+  bindEvents: function() {
+    document.addEventListener('deviceready', this.onDeviceReady);
+  },
+    
+  initialize: function() {
+    this.bindEvents();
+  },
   
-  document.addEventListener('pause', onPause);
-  document.addEventListener('resume', onResume);
+  onDeviceReady: function() {
+    document.removeEventListener('deviceready', app.onDeviceReady);
+    
+    if(!EstimoteBeacons) return;
+    
+    document.addEventListener('pause', app.onPause);
+    document.addEventListener('resume', app.onResume);
+    
+    EstimoteBeacons.startRangingBeaconsInRegion(startRangingBeaconsInRegionCallback);
+  },
   
-  EstimoteBeacons.startRangingBeaconsInRegion(startRangingBeaconsInRegionCallback);
-}
-document.addEventListener('deviceready', onDocumentDomContentLoaded);
-
-function onPause() {
-  EstimoteBeacons.stopRangingBeaconsInRegion(function() {
-    console.log('Stop ranging...');
-  });
-  clearInterval(myInterval);
-}
-
-function onResume() {
-  EstimoteBeacons.startRangingBeaconsInRegion(startRangingBeaconsInRegionCallback);
-}
+  onPause: function() {
+    EstimoteBeacons.stopRangingBeaconsInRegion(function() {
+      console.log('Stop ranging...');
+    });
+    clearInterval(myInterval);
+  },
+  
+  onResume: function() {
+    EstimoteBeacons.startRangingBeaconsInRegion(startRangingBeaconsInRegionCallback);
+  }
+};
 ```
 
 ## Available Methods
