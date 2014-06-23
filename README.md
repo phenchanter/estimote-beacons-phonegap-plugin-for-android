@@ -41,13 +41,17 @@ In your `www/js/index.js` file:
 var myInterval;
 
 function startRangingBeaconsInRegionCallback() {
-  console.log('Start ranging...');
+  console.log('Start ranging beacons...');
   
   // Every now and then get the list of beacons in range
   myInterval = setInterval(function() {
-    EstimoteBeacons.getBeacons(function(data) {
-      // data contains: proximityUUID, major, minor, rssi, macAddress and measuredPower
+    EstimoteBeacons.getBeacons(function(beacons) {
       console.log('Getting beacons...');
+      for(var i = 0, l = beacons.length; i < l; i++) {
+        var beacon = beacons[i];
+        // beacon contains major, minor, rssi, macAddress, measuredPower, etc.
+        console.log('beacon:', beacon);
+      }
       ...
     });
   }, 3000);
@@ -75,7 +79,7 @@ var app = {
   
   onPause: function() {
     EstimoteBeacons.stopRangingBeaconsInRegion(function() {
-      console.log('Stop ranging...');
+      console.log('Stop ranging beacons...');
     });
     clearInterval(myInterval);
   },
@@ -113,12 +117,6 @@ var app = {
 - Sometimes this plugin stops working because of an error: "Bluetooth Share has stopped". This is an [Android bug](https://code.google.com/p/android/issues/detail?id=67272). For more information about this bug read [bullet 2 within the FAQ section](https://github.com/Estimote/Android-SDK#faq) of [Estimote Android SDK](https://github.com/Estimote/Android-SDK). When this error appears, it may be necessary to factory reset your device. **NOTE: BACKUP YOUR DATA AND APPS BEFORE FACTORY RESET YOUR DEVICE**.
 
 ## FAQ
-
-<!--
-1. Where can I find a sample app which uses this plugin?
-
-  Take a look at [estimote-beacons-phonegap-sample-app](https://github.com/mdc-ux-team/estimote-beacons-phonegap-sample-app).
--->
 
 1. For which Android devices could I develop a hybrid app using this plugin?
 
