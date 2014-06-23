@@ -156,7 +156,7 @@ var app = {
 
 ## Changelog
 
-## 0.0.3
+### 0.0.3
 - Improved documentation.
 - Added isBluetoothEnabled and isBleSupported methods.
 
