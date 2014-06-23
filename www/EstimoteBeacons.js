@@ -157,4 +157,48 @@ EstimoteBeacons.prototype.getBeacons = function(successCallback) {
     );
 };
 
+/**
+ * Determines whether Bluetooth is enabled or not.
+ * @param {Function} successCallback
+ * @param {Function} [errorCallback]
+ */
+EstimoteBeacons.prototype.isBluetoothEnabled = function(successCallback, errorCallback) {
+    var METHOD_NAME = 'isBluetoothEnabled';
+
+    if(!isFunction(successCallback)) {
+        logError('successCallback parameter must be a function', METHOD_NAME);
+        return;
+    }
+
+    exec(
+        successCallback,
+        errorCallback,
+        PLUGIN_NAME,
+        METHOD_NAME,
+        []
+    );
+};
+
+/**
+ * Determines whether BLE is supported or not.
+ * @param {Function} successCallback
+ * @param {Function} [errorCallback]
+ */
+EstimoteBeacons.prototype.isBleSupported = function(successCallback, errorCallback) {
+    var METHOD_NAME = 'isBleSupported';
+
+    if(!isFunction(successCallback)) {
+        logError('successCallback parameter must be a function', METHOD_NAME);
+        return;
+    }
+
+    exec(
+        successCallback,
+        errorCallback,
+        PLUGIN_NAME,
+        METHOD_NAME,
+        []
+    );
+};
+
 module.exports = new EstimoteBeacons();

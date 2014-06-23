@@ -112,6 +112,14 @@ var app = {
 
 `EstimoteBeacons.getBeacons(successCallback)` Returns latest list of beacons found by `startRangingBeaconsInRegion`. You have to call this method periodically to be up to date with latest results.
 
+## isBleSupported
+
+`EstimoteBeacons.isBleSupported(successCallback, errorCallback)` Determines whether BLE is supported or not.
+
+## isBluetoothEnabled
+
+`EstimoteBeacons.isBluetoothEnabled(successCallback, errorCallback)` Determines whether Bluetooth is enabled or not.
+
 ## Known Issues
 
 - Sometimes this plugin stops working because of an error: "Bluetooth share has stopped". This is an [Android bug](https://code.google.com/p/android/issues/detail?id=67272). For more information about this bug read [Estimote Android SDK FAQ section](https://github.com/Estimote/Android-SDK#faq). When this error appears, it may be necessary to factory reset your device. **NOTE: BACKUP YOUR DATA AND APPS BEFORE FACTORY RESET YOUR DEVICE**.
@@ -147,6 +155,10 @@ var app = {
   5. Enter the new value for _Major_/_Minor_ and click _Save Major/Minor_.
 
 ## Changelog
+
+## 0.0.3
+- Improved documentation.
+- Added isBluetoothEnabled and isBleSupported methods.
 
 ### 0.0.2
 - Added JavaDoc and JSDoc comments.

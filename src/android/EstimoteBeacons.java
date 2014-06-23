@@ -1,5 +1,7 @@
 package com.oracle.mx.ux.cordova.estimotebeacons;
 
+import android.bluetooth.BluetoothAdapter;
+import android.content.pm.PackageManager;
 import android.os.RemoteException;
 import android.util.Log;
 
@@ -27,6 +29,8 @@ public class EstimoteBeacons extends CordovaPlugin {
     public static final String START_RANGING_BEACONS_IN_REGION = "startRangingBeaconsInRegion";
     public static final String STOP_RANGING_BEACONS_IN_REGION = "stopRangingBeaconsInRegion";
     public static final String GET_BEACONS = "getBeacons";
+    public static final String IS_BLUETOOTH_ENABLED = "isBluetoothEnabled";
+    public static final String IS_BLE_SUPPORTED = "isBleSupported";
 
     // Constants
     private static final String REGION_ID = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
@@ -36,6 +40,8 @@ public class EstimoteBeacons extends CordovaPlugin {
     private Region currentRegion;
     private List<Beacon> beacons = new ArrayList<Beacon>();
     private int inRegion = 0;
+    private PackageManager packageManager;
+    private BluetoothAdapter bluetoothAdapter;
 
     /**
      * Initializes the plugin.
@@ -48,6 +54,10 @@ public class EstimoteBeacons extends CordovaPlugin {
 
         beaconManager = new BeaconManager(this.cordova.getActivity().getApplicationContext());
         currentRegion = new Region("regionId", REGION_ID, null, null);
+
+        packageManager = this.cordova.getActivity().getPackageManager();
+
+        bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
     }
 
     /**
@@ -87,6 +97,16 @@ public class EstimoteBeacons extends CordovaPlugin {
 
             if(action.equalsIgnoreCase(GET_BEACONS)) {
                 callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, listToJSONArray(beacons)));
+                return true;
+            }
+
+            if(action.equalsIgnoreCase(IS_BLE_SUPPORTED)) {
+                isBleSupported(callbackContext);
+                return true;
+            }
+
+            if(action.equalsIgnoreCase(IS_BLUETOOTH_ENABLED)) {
+                isBluetoothEnabled(callbackContext);
                 return true;
             }
         } catch(Exception e) {
@@ -204,5 +224,23 @@ public class EstimoteBeacons extends CordovaPlugin {
         jsonObject.put("macAddress", beacon.getMacAddress());
         jsonObject.put("measuredPower", beacon.getMeasuredPower());
         return jsonObject;
+    }
+
+    /**
+     * Determines whether Bluetooth is enabled or not.
+     * @param callbackContext The callback id used when calling back into JavaScript
+     */
+    private void isBluetoothEnabled(final CallbackContext callbackContext) {
+        if(bluetoothAdapter.isEnabled()) callbackContext.success();
+        else callbackContext.error("Bluetooth is disabled.");
+    }
+
+    /**
+     * Determines whether BLE is supported or not.
+     * @param callbackContext The callback id used when calling back into JavaScript
+     */
+    private void isBleSupported(final CallbackContext callbackContext) {
+        if(packageManager.hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE)) callbackContext.success();
+        else callbackContext.error("BLE is not supported.");
     }
 }
