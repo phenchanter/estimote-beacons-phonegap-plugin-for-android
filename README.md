@@ -112,11 +112,11 @@ var app = {
 
 `EstimoteBeacons.getBeacons(successCallback)` Returns latest list of beacons found by `startRangingBeaconsInRegion`. You have to call this method periodically to be up to date with latest results.
 
-## isBleSupported
+### isBleSupported
 
 `EstimoteBeacons.isBleSupported(successCallback, errorCallback)` Determines whether BLE is supported or not.
 
-## isBluetoothEnabled
+### isBluetoothEnabled
 
 `EstimoteBeacons.isBluetoothEnabled(successCallback, errorCallback)` Determines whether Bluetooth is enabled or not.
 
