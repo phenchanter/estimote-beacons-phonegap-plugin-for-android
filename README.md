@@ -15,7 +15,7 @@ This plugin allows for:
 
 - [Apache Cordova](http://cordova.apache.org/#download)/[Adobe PhoneGap](http://phonegap.com/install) 3.x.
 - [Android SDK](http://developer.android.com/sdk).
-- Device with Android 4.3 or above and Bluetooth 4.0 or above (a.k.a. [Bluetooth Low Energy](http://en.wikipedia.org/wiki/Bluetooth_low_energy) or BLE).
+- Device with Android 4.3+ and Bluetooth 4.0+ (a.k.a. [Bluetooth Low Energy](http://en.wikipedia.org/wiki/Bluetooth_low_energy) or BLE).
 
 ## Installation
 
@@ -114,7 +114,7 @@ var app = {
 
 ## Known Issues
 
-- Sometimes this plugin stops working because of an error: "Bluetooth Share has stopped". This is an [Android bug](https://code.google.com/p/android/issues/detail?id=67272). For more information about this bug read [bullet 2 within the FAQ section](https://github.com/Estimote/Android-SDK#faq) of [Estimote Android SDK](https://github.com/Estimote/Android-SDK). When this error appears, it may be necessary to factory reset your device. **NOTE: BACKUP YOUR DATA AND APPS BEFORE FACTORY RESET YOUR DEVICE**.
+- Sometimes this plugin stops working because of an error: "Bluetooth share has stopped". This is an [Android bug](https://code.google.com/p/android/issues/detail?id=67272). For more information about this bug read [Estimote Android SDK FAQ section](https://github.com/Estimote/Android-SDK#faq). When this error appears, it may be necessary to factory reset your device. **NOTE: BACKUP YOUR DATA AND APPS BEFORE FACTORY RESET YOUR DEVICE**.
 
 ## FAQ
 
