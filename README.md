@@ -1,7 +1,5 @@
 # Estimote iBeacons Cordova/PhoneGap Plugin for Android
 
-**_NOTE: THIS IS A WORK IN PROGRESS. IT'S NOT EVEN A BETA VERSION YET. EVERYTHING MAY CHANGE_.**
-
 ## Overview
 
 This is a [Cordova](http://cordova.apache.org)/[PhoneGap](http://phonegap.com) 3.x plugin for Android which allows interaction with [Estimote iBeacons](http://estimote.com). This plugin is just a wrapper around [Estimote Android SDK](https://github.com/Estimote/Android-SDK).
