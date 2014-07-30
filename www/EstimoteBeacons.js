@@ -32,7 +32,7 @@ function isFunction(o) {
  * @returns {boolean} True if passed Object is equal to null or is empty, otherwise false
  */
 function isNullOrEmpty(o) {
-    return (!o || !o.length);
+    return (!o || o.length === 0);
 }
 
 /**

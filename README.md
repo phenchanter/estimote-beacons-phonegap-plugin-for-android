@@ -156,6 +156,11 @@ var app = {
 
 ## Changelog
 
+### 0.0.4
+- Minor Java code improvements.
+- Fixed Bluetooth detection for JELLY_BEAN_MR2 and higher Android devices.
+- Updated Estimote SDK to version 0.4.2. 
+
 ### 0.0.3
 - Improved documentation.
 - Added isBluetoothEnabled and isBleSupported methods.

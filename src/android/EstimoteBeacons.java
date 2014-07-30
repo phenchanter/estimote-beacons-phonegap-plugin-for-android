@@ -1,6 +1,8 @@
 package com.oracle.mx.ux.cordova.estimotebeacons;
 
+import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.RemoteException;
 import android.util.Log;
@@ -52,12 +54,15 @@ public class EstimoteBeacons extends CordovaPlugin {
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
 
-        beaconManager = new BeaconManager(this.cordova.getActivity().getApplicationContext());
+        final Activity activity = this.cordova.getActivity();
+        final Context context = activity.getApplicationContext();
+
+        beaconManager = new BeaconManager(context);
         currentRegion = new Region("regionId", REGION_ID, null, null);
 
-        packageManager = this.cordova.getActivity().getPackageManager();
+        packageManager = activity.getPackageManager();
 
-        bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        bluetoothAdapter = (BluetoothAdapter) Context.getSystemService(Context.BLUETOOTH_SERVICE);
     }
 
     /**
@@ -69,7 +74,7 @@ public class EstimoteBeacons extends CordovaPlugin {
      */
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        Log.d(EstimoteBeacons.class.toString(), "action -> " + action);
+        Log.d(EstimoteBeacons.class.toString(), "action: " + action);
 
         try {
             if(action.equalsIgnoreCase(START_MONITORING_BEACONS_IN_REGION)) {
@@ -96,7 +101,7 @@ public class EstimoteBeacons extends CordovaPlugin {
             }
 
             if(action.equalsIgnoreCase(GET_BEACONS)) {
-                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, listToJSONArray(beacons)));
+                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, beaconsListToJSONArray(beacons)));
                 return true;
             }
 
@@ -201,7 +206,7 @@ public class EstimoteBeacons extends CordovaPlugin {
      * @return JSONArray
      * @throws JSONException
      */
-    private JSONArray listToJSONArray(List<Beacon> beacons) throws JSONException {
+    private JSONArray beaconsListToJSONArray(final List<Beacon> beacons) throws JSONException {
         JSONArray jsonArray = new JSONArray();
         for(Beacon beacon : beacons) {
             jsonArray.put(beaconToJSONObject(beacon));
@@ -215,7 +220,7 @@ public class EstimoteBeacons extends CordovaPlugin {
      * @return JSONObject
      * @throws JSONException
      */
-    private JSONObject beaconToJSONObject(Beacon beacon) throws JSONException {
+    private JSONObject beaconToJSONObject(final Beacon beacon) throws JSONException {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("proximityUUID", beacon.getProximityUUID());
         jsonObject.put("major", beacon.getMajor());
