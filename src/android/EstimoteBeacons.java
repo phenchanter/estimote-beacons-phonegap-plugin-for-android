@@ -63,8 +63,10 @@ public class EstimoteBeacons extends CordovaPlugin {
 
         packageManager = activity.getPackageManager();
 
-        if(Build.VERSION.SDK_INT <= Build.VERSION_CODES.JELLY_BEAN_MR1) bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-        else bluetoothAdapter = (BluetoothAdapter) context.getSystemService(Context.BLUETOOTH_SERVICE);
+        //if(Build.VERSION.SDK_INT <= Build.VERSION_CODES.JELLY_BEAN_MR1) bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        //else bluetoothAdapter = (BluetoothAdapter) context.getSystemService(Context.BLUETOOTH_SERVICE);
+
+        bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
     }
 
     /**
