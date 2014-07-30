@@ -1,7 +1,5 @@
 # Estimote iBeacons Cordova/PhoneGap Plugin for Android
 
-**_NOTE: THIS IS A WORK IN PROGRESS. IT'S NOT EVEN A BETA VERSION YET. EVERYTHING MAY CHANGE_.**
-
 ## Overview
 
 This is a [Cordova](http://cordova.apache.org)/[PhoneGap](http://phonegap.com) 3.x plugin for Android which allows interaction with [Estimote iBeacons](http://estimote.com). This plugin is just a wrapper around [Estimote Android SDK](https://github.com/Estimote/Android-SDK).
@@ -9,7 +7,7 @@ This is a [Cordova](http://cordova.apache.org)/[PhoneGap](http://phonegap.com) 3
 This plugin allows for:
 - beacon ranging: Scan beacons and optionally filter them by their values.
 - beacon monitoring: Monitor regions for those devices that have entered/exited a region.
-- beacon characteristics reading (proximity UUID, major & minor values, etc.).
+- beacon characteristics reading (Mac Address, RSSI, Major & Minor values, etc.).
 
 ## Requirements
 
@@ -148,9 +146,9 @@ var app = {
   Yes. Take a look at the [kdzwinel/phonegap-estimotebeacons](https://github.com/kdzwinel/phonegap-estimotebeacons) project being developed by [Konrad Dzwinel](https://github.com/kdzwinel).
   
 1. How can I edit the value of the Major/Minor property of a beacon?
-  1. Install [Estimote app](https://play.google.com/store/apps/details?id=com.estimote.apps.main).
+  1. Install [Estimote](https://play.google.com/store/apps/details?id=com.estimote.apps.main) app.
   2. Click _Beacons_.
-  3. Click any of the beacons within the radar.
+  3. Click any of the beacons displayed in the radar.
   4. Click _Major_/_Minor_.
   5. Enter the new value for _Major_/_Minor_ and click _Save Major/Minor_.
 
@@ -175,8 +173,8 @@ var app = {
 
 ## References
 
-- [Adobe PhoneGap Documentation](http://docs.phonegap.com).
 - [Apache Cordova Documentation](http://cordova.apache.org/docs/en/3.4.0).
+- [Adobe PhoneGap Documentation](http://docs.phonegap.com).
 
 ## License
 
