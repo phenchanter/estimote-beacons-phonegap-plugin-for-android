@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.RemoteException;
 import android.util.Log;
 
@@ -62,7 +63,8 @@ public class EstimoteBeacons extends CordovaPlugin {
 
         packageManager = activity.getPackageManager();
 
-        bluetoothAdapter = (BluetoothAdapter) context.getSystemService(Context.BLUETOOTH_SERVICE);
+        if(Build.VERSION.SDK_INT <= Build.VERSION_CODES.JELLY_BEAN_MR1) bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        else bluetoothAdapter = (BluetoothAdapter) context.getSystemService(Context.BLUETOOTH_SERVICE);
     }
 
     /**
