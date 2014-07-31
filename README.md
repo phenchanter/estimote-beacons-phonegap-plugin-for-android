@@ -87,6 +87,7 @@ var app = {
   }
 };
 ```
+[Estimote Beacons Cordova/PhoneGap Sample App](https://github.com/mdc-ux-team/estimote-beacons-phonegap-sample-app)
 
 ## Available Methods
 
@@ -124,7 +125,7 @@ var app = {
 
 ## FAQ
 
-1. For which Android devices could I develop a hybrid app using this plugin?
+1) For which Android devices could I develop a hybrid app using this plugin?
 
   These could be some of them:
   - [Samsung Galaxy S3](http://www.samsung.com/global/galaxys3)
@@ -137,15 +138,15 @@ var app = {
   - [Google Nexus 5](http://www.google.com/nexus/5)
   - [Google Nexus 7](http://www.google.com/nexus/7)
 
-1. Is there an app to check if my Android device supports BLE?
+2) Is there an app to check if my Android device supports BLE?
 
-  [BLE Checker](https://play.google.com/store/apps/details?id=com.magicalboy.btd). We have tested this app in a couple of Android devices and it seems to work fine.
+  [BLE Checker](https://play.google.com/store/apps/details?id=com.magicalboy.btd).
 
-1. Is there an Estimote iBeacons Cordova/PhoneGap plugin for iOS?
+3) Is there an Estimote iBeacons Cordova/PhoneGap plugin for iOS?
 
   Yes. Take a look at the [kdzwinel/phonegap-estimotebeacons](https://github.com/kdzwinel/phonegap-estimotebeacons) project being developed by [Konrad Dzwinel](https://github.com/kdzwinel).
   
-1. How can I edit the value of the Major/Minor property of a beacon?
+4) How can I edit the value of the Major/Minor property of a beacon?
   1. Install [Estimote](https://play.google.com/store/apps/details?id=com.estimote.apps.main) app.
   2. Click _Beacons_.
   3. Click any of the beacons displayed in the radar.
@@ -156,7 +157,7 @@ var app = {
 
 ### 0.0.4
 - Minor Java code improvements.
-- Fixed Bluetooth detection for JELLY_BEAN_MR2 and higher Android devices.
+- Improved Bluetooth detection.
 - Updated Estimote SDK to version 0.4.2. 
 
 ### 0.0.3
