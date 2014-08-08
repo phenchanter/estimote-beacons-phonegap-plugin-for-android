@@ -178,10 +178,15 @@ public class EstimoteBeacons extends CordovaPlugin {
 
             @Override
             public void onEnteredRegion(Region region, List<Beacon> beacons) {
-                EstimoteBeacons.this.inRegion = 1;
-                PluginResult pluginResult = new PluginResult(PluginResult.Status.OK, beaconsListToJSONArray(beacons));
-                pluginResult.setKeepCallback(true);
-                callbackContext.sendPluginResult(pluginResult);
+                try{
+                    EstimoteBeacons.this.inRegion = 1;
+                    PluginResult pluginResult = new PluginResult(PluginResult.Status.OK, beaconsListToJSONArray(beacons));
+                    pluginResult.setKeepCallback(true);
+                    callbackContext.sendPluginResult(pluginResult);
+                }catch(Exception e){
+                    Log.e("DEBUG", "onEnteredRegion", e);
+                }
+
             }
         });
         beaconManager.connect(new BeaconManager.ServiceReadyCallback() {
