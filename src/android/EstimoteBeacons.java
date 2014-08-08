@@ -135,7 +135,9 @@ public class EstimoteBeacons extends CordovaPlugin {
             public void onBeaconsDiscovered(Region region, List<Beacon> beacons) {
                 if(beacons == null || beacons.isEmpty()) {
                     Log.d("DEBUG", "No beacons");
-                    EstimoteBeacons.this.beacons.clear();
+                    if(EstimoteBeacons.this.beacons) {
+                        EstimoteBeacons.this.beacons.clear();
+                    }
                 } else {
                     EstimoteBeacons.this.beacons = beacons;
                 }
